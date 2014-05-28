@@ -1,0 +1,135 @@
+uniform float t_geo;
+uniform float t_color;
+uniform float w;
+uniform float h;
+uniform float ex;
+uniform int color_from;
+uniform sampler2D vector;
+uniform sampler2D quadratic;
+uniform sampler2D image1;
+uniform sampler2D image2;
+
+vec4 tex2DBiLinear( sampler2D textureSampler_i, vec2 texCoord,float tex_w, float tex_h )
+{
+	float texelSizeX = 1.0 / tex_w; //size of one texel 
+	float texelSizeY = 1.0 / tex_h; //size of one texel 
+
+	int nX = floor( texCoord.x );
+	int nY = floor( texCoord.y );
+	vec2 texCoord_New = vec2( ( float( nX ) + 0.5 ) / tex_w,
+							  ( float( nY ) + 0.5 ) / tex_h );
+	// Take nearest two data in current row.
+    vec4 p0q0 = texture2D(textureSampler_i, texCoord_New);
+    vec4 p1q0 = texture2D(textureSampler_i, texCoord_New + vec2(texelSizeX, 0));
+
+	// Take nearest two data in bottom row.
+    vec4 p0q1 = texture2D(textureSampler_i, texCoord_New + vec2(0, texelSizeY));
+    vec4 p1q1 = texture2D(textureSampler_i, texCoord_New + vec2(texelSizeX , texelSizeY));
+
+    float a = texCoord.x - nX; // Get Interpolation factor for X direction.
+											 // Fraction near to valid data.
+
+	// Interpolation in X direction.
+    vec4 pInterp_q0 = mix( p0q0, p1q0, a ); // Interpolates top row in X direction.
+    vec4 pInterp_q1 = mix( p0q1, p1q1, a ); // Interpolates bottom row in X direction.
+
+    float b = texCoord.y -nY; // Get Interpolation factor for Y direction.
+    return mix( pInterp_q0, pInterp_q1, b ); // Interpolate in Y direction.
+}
+
+float CatMullRom( float x )
+{
+    float B = 0.0;
+    float C = 0.5;
+    float f = x;
+    if( f < 0.0 )
+    {
+        f = -f;
+    }
+    if( f < 1.0 )
+    {
+        return ( ( 12.0 - 9.0 * B - 6.0 * C ) * ( f * f * f ) +
+            ( -18.0f + 12.0f * B + 6.0f * C ) * ( f * f ) +
+            ( 6.0f - 2.0f * B ) ) / 6.0f;
+    }
+    else if( f >= 1.0 && f < 2.0 )
+    {
+        return ( ( -B - 6 * C ) * ( f * f * f )
+            + ( 6 * B + 30 * C ) * ( f *f ) +
+            ( - ( 12 * B ) - 48 * C  ) * f +
+            8 * B + 24 * C)/ 6.0;
+    }
+    else
+    {
+        return 0.0;
+    }
+}
+
+
+vec4 tex2DBiCubic( sampler2D textureSampler, vec2 TexCoord, float tex_w, float tex_h )
+{
+	float texelSizeX = 1.0 / tex_w; //size of one texel 
+	float texelSizeY = 1.0 / tex_h; //size of one texel 
+    vec4 nSum = vec4( 0.0, 0.0, 0.0, 0.0 );
+    vec4 nDenom = vec4( 0.0, 0.0, 0.0, 0.0 );  
+
+	int nX = floor(TexCoord.x);
+	int nY = floor(TexCoord.y);
+	float a =  TexCoord.x - nX; // get the decimal part
+    float b =  TexCoord.y - nY; // get the decimal part
+
+	vec2 TexCoord1 = vec2( float(nX) / tex_w + 0.5 / tex_w,
+					       float(nY) / tex_h + 0.5 / tex_h );
+
+    for( int m = -1; m <=2; m++ )
+    {
+        for( int n =-1; n<= 2; n++)
+        {
+			vec4 vecData = texture2D(textureSampler, TexCoord1 + vec2(texelSizeX * float( m ), texelSizeY * float( n )));
+			float f  = CatMullRom( float( m ) - a );
+			vec4 vecCooef1 = vec4( f,f,f,f );
+			float f1 = CatMullRom( -( float( n ) - b ) );
+			vec4 vecCoeef2 = vec4( f1, f1, f1, f1 );
+            nSum = nSum + ( vecData * vecCoeef2 * vecCooef1  );
+            nDenom = nDenom + (( vecCoeef2 * vecCooef1 ));
+        }
+    }
+    return nSum / nDenom;
+}
+
+
+
+void main()
+{
+	vec2 q;
+	q.x=gl_FragCoord.x;
+	q.y=h-gl_FragCoord.y;	
+	vec2 p=q;
+	vec2 v;
+	vec2 u;
+	v=vec2(tex2DBiCubic(vector,p,w,h));  	
+ 	u=vec2(tex2DBiCubic(quadratic,p,w,h));
+ 	float alpha=0.8;
+ 	
+	for(int i=0;i<20;i++)
+ 	{	 			
+ 		p=q-(2*t_geo-1)*v-(4*t_geo-4*t_geo*t_geo)*u;
+ 		//p=q-(2*t_geo-1)*v;		
+ 		
+ 		v=alpha*vec2(tex2DBiCubic(vector,p,w,h))+(1-alpha)*v;
+ 		u=alpha*vec2(tex2DBiCubic(quadratic,p,w,h))+(1-alpha)*u;				
+ 	}
+ 			
+	vec4 color1=tex2DBiCubic(image1,p-v+vec2(ex,ex),w+ex*2,h+ex*2); 
+ 	vec4 color2=tex2DBiCubic(image2,p+v+vec2(ex,ex),w+ex*2,h+ex*2); 	
+ 	
+ 	vec4 color;
+ 	if(color_from==0)
+ 		color=color1;
+ 	else if(color_from==1)
+ 		color=(1-t_color)*color1+t_color*color2;
+ 	else
+ 		color=color2; 	
+	
+ 	gl_FragColor=color;	
+}
