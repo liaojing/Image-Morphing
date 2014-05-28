@@ -100,9 +100,9 @@
     <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ExecutablePath)</ExecutablePath>
     <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ExecutablePath)</ExecutablePath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;..\src\pyramids\include;..\src\gpumorph\include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;D:\morphing\share\src\gpumorph\src;D:\morphing\share\src\pyramids\include;D:\morphing\share\src\gpumorph\lib;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;D:\morphing\share\src\gpumorph\lib;D:\morphing\share\src\pyramids\include;D:\morphing\share\src\gpumorph\src;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;..\src\pyramids\lib;..\src\gpumorph\lib;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;D:\morphing\share\src\debug;D:\morphing\share\src\pyramids\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;D:\morphing\share\src\x64\Debug;D:\morphing\share\src\pyramids\lib;$(LibraryPath)</LibraryPath>
     <SourcePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SourcePath)</SourcePath>
     <SourcePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SourcePath)</SourcePath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;..\src\pyramids\include;..\src\gpumorph\include;$(IncludePath)</IncludePath>
@@ -172,7 +172,7 @@
       <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>d:\lib\Qt\4.8.4\lib\qtmaind.lib;d:\lib\Qt\4.8.4\lib\QtXmld4.lib;d:\lib\Qt\4.8.4\lib\QtOpenGLd4.lib;d:\lib\Qt\4.8.4\lib\QtGuid4.lib;d:\lib\Qt\4.8.4\lib\QtCored4.lib;glew32.lib;cudart.lib;pyramidsd.lib;opencv_core243d.lib;opencv_highgui243d.lib;opencv_imgproc243d.lib;gpumorph.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d:\lib\Qt\4.8.4\lib\qtmaind.lib;d:\lib\Qt\4.8.4\lib\QtXmld4.lib;d:\lib\Qt\4.8.4\lib\QtOpenGLd4.lib;d:\lib\Qt\4.8.4\lib\QtGuid4.lib;d:\lib\Qt\4.8.4\lib\QtCored4.lib;glew32.lib;cudart.lib;pyramidsd.lib;opencv_core243d.lib;opencv_highgui243d.lib;opencv_imgproc243d.lib;resample.lib;util.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>d:\lib\Qt\4.8.4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -289,6 +289,10 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gpumorph\src\cpuoptim.cpp" />
+    <ClCompile Include="gpumorph\src\downsample.cpp" />
+    <ClCompile Include="gpumorph\src\imgio.cpp" />
+    <ClCompile Include="gpumorph\src\stencils.cpp" />
     <ClCompile Include="IntelligentScissor\CostGraph.cpp" />
     <ClCompile Include="IntelligentScissor\CostNode.cpp" />
     <ClCompile Include="UI\CtrBar.cpp" />
@@ -307,6 +311,10 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gpumorph\src\imgio.h" />
+    <ClInclude Include="gpumorph\src\morph.h" />
+    <ClInclude Include="gpumorph\src\pyramid.h" />
+    <ClInclude Include="gpumorph\src\stencils.h" />
     <ClInclude Include="IntelligentScissor\CostGraph.h" />
     <ClInclude Include="IntelligentScissor\CostNode.h" />
     <CustomBuild Include="UI\CtrBar.h">
@@ -627,6 +635,10 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <CudaCompile Include="gpumorph\src\morph.cu" />
+    <CudaCompile Include="gpumorph\src\pyramid.cu" />
+    <CudaCompile Include="gpumorph\src\render.cu" />
+    <CudaCompile Include="gpumorph\src\upsample.cu" />
     <CustomBuild Include="UI\CtrBar.qrc">
       <FileType>Document</FileType>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt\4.8.4\bin\rcc.exe;UI\CtrBar.qrc;UI\icon\pause.png;UI\icon\play.png;UI\icon\record.png;UI\icon\stop.png;%(AdditionalInputs)</AdditionalInputs>

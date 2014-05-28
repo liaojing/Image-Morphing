@@ -98,6 +98,18 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="gpumorph\src\cpuoptim.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gpumorph\src\downsample.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gpumorph\src\imgio.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gpumorph\src\stencils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IntelligentScissor\CostGraph.h">
@@ -146,6 +158,18 @@
       <Filter>Header Files</Filter>
     </CustomBuild>
     <ClInclude Include="IntelligentScissor\fibheap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gpumorph\src\imgio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gpumorph\src\morph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gpumorph\src\pyramid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gpumorph\src\stencils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -258,6 +282,18 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="CUDA\cg.cu">
+      <Filter>Cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="gpumorph\src\morph.cu">
+      <Filter>Cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="gpumorph\src\pyramid.cu">
+      <Filter>Cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="gpumorph\src\render.cu">
+      <Filter>Cuda</Filter>
+    </CudaCompile>
+    <CudaCompile Include="gpumorph\src\upsample.cu">
       <Filter>Cuda</Filter>
     </CudaCompile>
   </ItemGroup>

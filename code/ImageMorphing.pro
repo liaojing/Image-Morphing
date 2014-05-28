@@ -14,7 +14,13 @@ HEADERS       = Header.h \
 		Algorithm/PoissonExt.h \       		
 		IntelligentScissor/fibheap.h \
 		IntelligentScissor/CostGraph.h \
-		IntelligentScissor/CostNode.h
+		IntelligentScissor/CostNode.h \
+		gpumorph\src\imgio.h\
+		gpumorph\src\pyramid.h\
+		gpumorph\src\morph.h\
+		gpumorph\src\stencil.h\
+		CUDA/cg.cuh
+	
 		
 SOURCES       =  main.cpp \
 		UI/MdiEditor.cpp \               
@@ -32,6 +38,14 @@ SOURCES       =  main.cpp \
 		IntelligentScissor/fibheap.cpp \
 		IntelligentScissor/CostGraph.cpp \
 		IntelligentScissor/CostNode.cpp
+		gpumorph/src/cpuoptim.cpp \
+		gpumorph/src/downsample.cpp \
+		gpumorph/src/imgio.cpp \
+		gpumorph/src/morph.cu\
+		gpumorph/src/render.cu\
+		gpumorph/src/stencil.cpp \
+		gpumorph/src/upsample.cu \
+		CUDA/cg.cu
 
 FORMS		  = UI/DlgPara.ui \
 		    UI/CtrBar.ui

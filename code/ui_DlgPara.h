@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'DlgPara.ui'
 **
-** Created: Wed May 28 23:06:52 2014
+** Created: Wed May 28 23:59:36 2014
 **      by: Qt User Interface Compiler version 4.8.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

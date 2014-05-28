@@ -163,6 +163,9 @@ Morph::~Morph()
     delete m_pyramid;
 }
 
+Parameters& Morph::params()
+{return m_params;}
+
 void Morph::set_callback(ProgressCallback cb, void *cbdata)
 {
     m_cb = cb;
