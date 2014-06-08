@@ -100,13 +100,13 @@
     <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ExecutablePath)</ExecutablePath>
     <ExecutablePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ExecutablePath)</ExecutablePath>
     <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;..\src\pyramids\include;..\src\gpumorph\include;$(IncludePath)</IncludePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;D:\morphing\share\src\gpumorph\lib;D:\morphing\share\src\pyramids\include;D:\morphing\share\src\gpumorph\src;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;.\pyramids\include;.\gpumorph\src;.\gpumorph\lib;$(IncludePath)</IncludePath>
     <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;..\src\pyramids\lib;..\src\gpumorph\lib;$(LibraryPath)</LibraryPath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;D:\morphing\share\src\x64\Debug;D:\morphing\share\src\pyramids\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;.\pyramids\lib;.\x64\Debug;$(LibraryPath)</LibraryPath>
     <SourcePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SourcePath)</SourcePath>
     <SourcePath Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SourcePath)</SourcePath>
-    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;..\src\pyramids\include;..\src\gpumorph\include;$(IncludePath)</IncludePath>
-    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;..\src\pyramids\lib;..\src\gpumorph\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\GL\include;D:\lib\OpenCV\include;D:\lib\Qt\4.8.4\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\include;.\pyramids\include;.\gpumorph\src;.\gpumorph\lib;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\GL\lib;D:\lib\OpenCV\lib;D:\lib\Qt\4.8.4\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v5.0\lib\x64;.\pyramids\lib;.\x64\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
