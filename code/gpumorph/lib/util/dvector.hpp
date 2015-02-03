@@ -1,5 +1,5 @@
 #include <cuda_runtime.h>
-
+#include <algorithm>
 namespace rod
 {
 

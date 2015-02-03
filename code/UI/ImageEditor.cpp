@@ -249,7 +249,7 @@ void ImageEditor::mousePressEvent(QMouseEvent *event)
 		else if (event->button() == Qt::RightButton) 
 		{
 			//select
-			vector<ConstraintPoint>::iterator itr = parameters->ui_points.begin();
+			std::vector<ConstraintPoint>::iterator itr = parameters->ui_points.begin();
 			while (itr != parameters->ui_points.end())
 			{
 				QPoint ConP;

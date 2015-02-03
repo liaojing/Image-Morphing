@@ -3,7 +3,7 @@
 
 #include <stdlib.h> // cutil_math needs abs(int) when we're not using nvcc
 #include <cuda.h>
-#include <cmath>
+#include <math.h>
 #include <vector_functions.h>
 #include <device_functions.h>
 #include "hostdev.h"
@@ -1479,12 +1479,7 @@ __device__ inline float4 saturate(float4 v)
     return make_float4(saturate(v.x),saturate(v.y),saturate(v.z),saturate(v.w));
 }
 
-#if defined(_MSC_VER) && !defined(__CUDACC__)
-inline float rint(float x)
-{
-    return (float)(int)(x+0.5f);
-}
-#endif
+
 
 HOSTDEV inline float3 rint(float3 v)
 {

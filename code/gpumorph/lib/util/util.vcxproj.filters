@@ -18,86 +18,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="box_sampler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bspline3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="config.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cubic_sampler.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cuda_traits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dalloc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dimage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dimage_fwd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dmath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dvector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dvector.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="effects.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="error.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="filter_traits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hostdev.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="image_ops.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="linalg.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="linalg_fwd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mitchell_netravali.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mutex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="pixel_traits.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="recfilter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="symbol.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="linalg.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="dalloc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -115,28 +35,18 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cuPrintf.cuh">
-      <Filter>cuda</Filter>
-    </None>
+    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_recfilter.cu.obj" />
+    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_basic.cu.obj" />
+    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_conv.cu.obj" />
+    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_upsample.cu.obj" />
+    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_downsample.cu.obj" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="cuPrintf.cu">
-      <Filter>cuda</Filter>
-    </CudaCompile>
-    <CudaCompile Include="imgop_basic.cu">
-      <Filter>cuda</Filter>
-    </CudaCompile>
-    <CudaCompile Include="imgop_conv.cu">
-      <Filter>cuda</Filter>
-    </CudaCompile>
-    <CudaCompile Include="imgop_downsample.cu">
-      <Filter>cuda</Filter>
-    </CudaCompile>
-    <CudaCompile Include="imgop_upsample.cu">
-      <Filter>cuda</Filter>
-    </CudaCompile>
-    <CudaCompile Include="recfilter.cu">
-      <Filter>cuda</Filter>
-    </CudaCompile>
+    <CustomBuild Include="recfilter.cu" />
+    <CustomBuild Include="imgop_basic.cu" />
+    <CustomBuild Include="imgop_conv.cu" />
+    <CustomBuild Include="imgop_upsample.cu" />
+    <CustomBuild Include="imgop_downsample.cu" />
+    <CustomBuild Include="CMakeLists.txt" />
   </ItemGroup>
 </Project>

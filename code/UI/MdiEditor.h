@@ -89,7 +89,7 @@ private:
 	QMenu *result_view,*color_view,*layer_view,*mask_view;
 	cv::Mat image1,image2;
 	bool gpu_flag;
-
+	bool gpu_cap;
 	//Layers
 	int mod;//0-before loaded,1-optimizing,2-new mask, 3-new layer, 4-multilayer
 	int layer_num;

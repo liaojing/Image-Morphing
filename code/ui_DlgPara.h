@@ -1,8 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'DlgPara.ui'
 **
-** Created: Sun Jun 8 13:29:04 2014
-**      by: Qt User Interface Compiler version 4.8.4
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -11,18 +10,18 @@
 #define UI_DLGPARA_H
 
 #include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QFormLayout>
-#include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QHeaderView>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QPushButton>
-#include <QtGui/QRadioButton>
-#include <QtGui/QWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
@@ -63,134 +62,134 @@ public:
     void setupUi(QWidget *CDlgPara)
     {
         if (CDlgPara->objectName().isEmpty())
-            CDlgPara->setObjectName(QString::fromUtf8("CDlgPara"));
+            CDlgPara->setObjectName(QStringLiteral("CDlgPara"));
         CDlgPara->resize(274, 391);
         groupBox = new QGroupBox(CDlgPara);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(10, 10, 251, 131));
         formLayoutWidget = new QWidget(groupBox);
-        formLayoutWidget->setObjectName(QString::fromUtf8("formLayoutWidget"));
+        formLayoutWidget->setObjectName(QStringLiteral("formLayoutWidget"));
         formLayoutWidget->setGeometry(QRect(10, 20, 231, 100));
         formLayout = new QFormLayout(formLayoutWidget);
-        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
         label = new QLabel(formLayoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName(QStringLiteral("label"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label);
 
         lineEdit_SSIM = new QLineEdit(formLayoutWidget);
-        lineEdit_SSIM->setObjectName(QString::fromUtf8("lineEdit_SSIM"));
+        lineEdit_SSIM->setObjectName(QStringLiteral("lineEdit_SSIM"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit_SSIM);
 
         label_2 = new QLabel(formLayoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setObjectName(QStringLiteral("label_2"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_2);
 
         lineEdit_SSIMClamp = new QLineEdit(formLayoutWidget);
-        lineEdit_SSIMClamp->setObjectName(QString::fromUtf8("lineEdit_SSIMClamp"));
+        lineEdit_SSIMClamp->setObjectName(QStringLiteral("lineEdit_SSIMClamp"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_SSIMClamp);
 
         label_3 = new QLabel(formLayoutWidget);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName(QStringLiteral("label_3"));
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_3);
 
         lineEdit_TPS = new QLineEdit(formLayoutWidget);
-        lineEdit_TPS->setObjectName(QString::fromUtf8("lineEdit_TPS"));
+        lineEdit_TPS->setObjectName(QStringLiteral("lineEdit_TPS"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, lineEdit_TPS);
 
         label_4 = new QLabel(formLayoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName(QStringLiteral("label_4"));
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_4);
 
         lineEdit_UI = new QLineEdit(formLayoutWidget);
-        lineEdit_UI->setObjectName(QString::fromUtf8("lineEdit_UI"));
+        lineEdit_UI->setObjectName(QStringLiteral("lineEdit_UI"));
 
         formLayout->setWidget(3, QFormLayout::FieldRole, lineEdit_UI);
 
         groupBox_2 = new QGroupBox(CDlgPara);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
         groupBox_2->setGeometry(QRect(10, 150, 251, 71));
         formLayoutWidget_2 = new QWidget(groupBox_2);
-        formLayoutWidget_2->setObjectName(QString::fromUtf8("formLayoutWidget_2"));
+        formLayoutWidget_2->setObjectName(QStringLiteral("formLayoutWidget_2"));
         formLayoutWidget_2->setGeometry(QRect(10, 20, 234, 42));
         formLayout_2 = new QFormLayout(formLayoutWidget_2);
-        formLayout_2->setObjectName(QString::fromUtf8("formLayout_2"));
+        formLayout_2->setObjectName(QStringLiteral("formLayout_2"));
         formLayout_2->setContentsMargins(0, 0, 0, 0);
         radioButton_1 = new QRadioButton(formLayoutWidget_2);
-        radioButton_1->setObjectName(QString::fromUtf8("radioButton_1"));
+        radioButton_1->setObjectName(QStringLiteral("radioButton_1"));
 
         formLayout_2->setWidget(0, QFormLayout::LabelRole, radioButton_1);
 
         radioButton_2 = new QRadioButton(formLayoutWidget_2);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setObjectName(QStringLiteral("radioButton_2"));
 
         formLayout_2->setWidget(0, QFormLayout::FieldRole, radioButton_2);
 
         radioButton_3 = new QRadioButton(formLayoutWidget_2);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+        radioButton_3->setObjectName(QStringLiteral("radioButton_3"));
 
         formLayout_2->setWidget(1, QFormLayout::LabelRole, radioButton_3);
 
         groupBox_3 = new QGroupBox(CDlgPara);
-        groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         groupBox_3->setGeometry(QRect(10, 230, 251, 111));
         formLayoutWidget_3 = new QWidget(groupBox_3);
-        formLayoutWidget_3->setObjectName(QString::fromUtf8("formLayoutWidget_3"));
+        formLayoutWidget_3->setObjectName(QStringLiteral("formLayoutWidget_3"));
         formLayoutWidget_3->setGeometry(QRect(10, 20, 231, 81));
         formLayout_3 = new QFormLayout(formLayoutWidget_3);
-        formLayout_3->setObjectName(QString::fromUtf8("formLayout_3"));
+        formLayout_3->setObjectName(QStringLiteral("formLayout_3"));
         formLayout_3->setFieldGrowthPolicy(QFormLayout::AllNonFixedFieldsGrow);
         formLayout_3->setContentsMargins(0, 0, 0, 0);
         label_6 = new QLabel(formLayoutWidget_3);
-        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setObjectName(QStringLiteral("label_6"));
 
         formLayout_3->setWidget(0, QFormLayout::LabelRole, label_6);
 
         lineEdit_Iter = new QLineEdit(formLayoutWidget_3);
-        lineEdit_Iter->setObjectName(QString::fromUtf8("lineEdit_Iter"));
+        lineEdit_Iter->setObjectName(QStringLiteral("lineEdit_Iter"));
 
         formLayout_3->setWidget(0, QFormLayout::FieldRole, lineEdit_Iter);
 
         label_7 = new QLabel(formLayoutWidget_3);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setObjectName(QStringLiteral("label_7"));
 
         formLayout_3->setWidget(1, QFormLayout::LabelRole, label_7);
 
         lineEdit_Drop = new QLineEdit(formLayoutWidget_3);
-        lineEdit_Drop->setObjectName(QString::fromUtf8("lineEdit_Drop"));
+        lineEdit_Drop->setObjectName(QStringLiteral("lineEdit_Drop"));
 
         formLayout_3->setWidget(1, QFormLayout::FieldRole, lineEdit_Drop);
 
         label_8 = new QLabel(formLayoutWidget_3);
-        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setObjectName(QStringLiteral("label_8"));
 
         formLayout_3->setWidget(2, QFormLayout::LabelRole, label_8);
 
         lineEdit_EPS = new QLineEdit(formLayoutWidget_3);
-        lineEdit_EPS->setObjectName(QString::fromUtf8("lineEdit_EPS"));
+        lineEdit_EPS->setObjectName(QStringLiteral("lineEdit_EPS"));
 
         formLayout_3->setWidget(2, QFormLayout::FieldRole, lineEdit_EPS);
 
         horizontalLayoutWidget = new QWidget(CDlgPara);
-        horizontalLayoutWidget->setObjectName(QString::fromUtf8("horizontalLayoutWidget"));
+        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
         horizontalLayoutWidget->setGeometry(QRect(10, 350, 251, 31));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         pushButton_Confirm = new QPushButton(horizontalLayoutWidget);
-        pushButton_Confirm->setObjectName(QString::fromUtf8("pushButton_Confirm"));
+        pushButton_Confirm->setObjectName(QStringLiteral("pushButton_Confirm"));
 
         horizontalLayout->addWidget(pushButton_Confirm);
 
         pushButton_Cancel = new QPushButton(horizontalLayoutWidget);
-        pushButton_Cancel->setObjectName(QString::fromUtf8("pushButton_Cancel"));
+        pushButton_Cancel->setObjectName(QStringLiteral("pushButton_Cancel"));
 
         horizontalLayout->addWidget(pushButton_Cancel);
 
@@ -202,22 +201,22 @@ public:
 
     void retranslateUi(QWidget *CDlgPara)
     {
-        CDlgPara->setWindowTitle(QApplication::translate("CDlgPara", "Parameters", 0, QApplication::UnicodeUTF8));
-        groupBox->setTitle(QApplication::translate("CDlgPara", "Weights", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("CDlgPara", "SSIM", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("CDlgPara", "SSIM clamp", 0, QApplication::UnicodeUTF8));
-        label_3->setText(QApplication::translate("CDlgPara", "TPS", 0, QApplication::UnicodeUTF8));
-        label_4->setText(QApplication::translate("CDlgPara", "UI", 0, QApplication::UnicodeUTF8));
-        groupBox_2->setTitle(QApplication::translate("CDlgPara", "Boundary", 0, QApplication::UnicodeUTF8));
-        radioButton_1->setText(QApplication::translate("CDlgPara", "no lock", 0, QApplication::UnicodeUTF8));
-        radioButton_2->setText(QApplication::translate("CDlgPara", "lock corners", 0, QApplication::UnicodeUTF8));
-        radioButton_3->setText(QApplication::translate("CDlgPara", "lock boundaries", 0, QApplication::UnicodeUTF8));
-        groupBox_3->setTitle(QApplication::translate("CDlgPara", "Others", 0, QApplication::UnicodeUTF8));
-        label_6->setText(QApplication::translate("CDlgPara", "Iteration number", 0, QApplication::UnicodeUTF8));
-        label_7->setText(QApplication::translate("CDlgPara", "Drop factor", 0, QApplication::UnicodeUTF8));
-        label_8->setText(QApplication::translate("CDlgPara", "EPS", 0, QApplication::UnicodeUTF8));
-        pushButton_Confirm->setText(QApplication::translate("CDlgPara", "Confirm", 0, QApplication::UnicodeUTF8));
-        pushButton_Cancel->setText(QApplication::translate("CDlgPara", "Cancel", 0, QApplication::UnicodeUTF8));
+        CDlgPara->setWindowTitle(QApplication::translate("CDlgPara", "Parameters", 0));
+        groupBox->setTitle(QApplication::translate("CDlgPara", "Weights", 0));
+        label->setText(QApplication::translate("CDlgPara", "SSIM", 0));
+        label_2->setText(QApplication::translate("CDlgPara", "SSIM clamp", 0));
+        label_3->setText(QApplication::translate("CDlgPara", "TPS", 0));
+        label_4->setText(QApplication::translate("CDlgPara", "UI", 0));
+        groupBox_2->setTitle(QApplication::translate("CDlgPara", "Boundary", 0));
+        radioButton_1->setText(QApplication::translate("CDlgPara", "no lock", 0));
+        radioButton_2->setText(QApplication::translate("CDlgPara", "lock corners", 0));
+        radioButton_3->setText(QApplication::translate("CDlgPara", "lock boundaries", 0));
+        groupBox_3->setTitle(QApplication::translate("CDlgPara", "Others", 0));
+        label_6->setText(QApplication::translate("CDlgPara", "Iteration number", 0));
+        label_7->setText(QApplication::translate("CDlgPara", "Drop factor", 0));
+        label_8->setText(QApplication::translate("CDlgPara", "EPS", 0));
+        pushButton_Confirm->setText(QApplication::translate("CDlgPara", "Confirm", 0));
+        pushButton_Cancel->setText(QApplication::translate("CDlgPara", "Cancel", 0));
     } // retranslateUi
 
 };

@@ -21,21 +21,14 @@
 #include <QDir>
 #include <QFileDialog>
 #include <QtXml>
+#include <QGLWidget>
+#include <QMenu>
+#include <QMenuBar>
 
-
-//opengl
-#if _WIN32
-#   include <glew.h>
-#   include <glut.h>
-#else
-#   include <GL/glew.h>
-#   include <GL/glut.h>
-#endif
-#include <Qt/qgl.h>
 
 //opencv
 #include <opencv2/opencv.hpp>
-
+#include <opencv2/imgproc/types_c.h>  
 using namespace cv;
 
 //openmp

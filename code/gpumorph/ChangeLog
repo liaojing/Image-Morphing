@@ -1,0 +1,2769 @@
+commit 852823ac0a7cb8e45721cb688e7b721a942af275
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Mon Jan 14 12:08:41 2013 -0200
+
+    fix zeros() for matrices and vectors in VC2010
+
+commit ba073880e64ec71823a8954c1022efcbd222e9b0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Jan 14 00:47:26 2013 -0200
+
+    don't include round() on linux
+
+commit 1113d7fe82f59667604f9cba751b37fde8613ec4
+Merge: 8f79b10 4644fbf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Jan 14 00:45:05 2013 -0200
+
+    Merge branch 'jing_version' of code.rodsoft.org:gpumorph
+
+commit 8f79b100fc6fe6cdf388d079213aeb0f000feab8
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Mon Jan 14 00:39:18 2013 -0200
+
+    fix max number of iterations
+
+commit ced30007bfa3d742f172b3f9d10808a6efa72cde
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:23:47 2013 -0200
+
+    [resample] error.c -> error.cpp, inside a namespace
+
+commit 207299eeee1f9db22c4feb12112af8bdcf2ac1d2
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:21:07 2013 -0200
+
+    put resample functions in nehab namespace
+
+commit 53381b50742a73277f9fbf9db7242081e92eff5c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 19:31:55 2013 -0200
+
+    added methods to retrieve original images in Morph
+
+commit 3ac5efa11b6c90e514413731aa16e6214cf7c9cc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 19:28:54 2013 -0200
+
+    put pyramid creation in Morph ctor
+
+commit a12e0bef785bbf84a5e811df7a8d71a64479d693
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 19:02:53 2013 -0200
+
+    pyramid creation doesn't depend on Parameters
+
+commit a3bdd13fefc4058a776d4509538429717e4e107c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 18:58:15 2013 -0200
+
+    put some pyramid processing global funcs in class Morph
+
+commit c99ca9041135d10e5b0f5c30389feff3aee21ff6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 18:49:56 2013 -0200
+
+    put morph api in a class
+
+commit 990451fd08c8e30452e2db2a8a2b05f1d51ed038
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 18:42:36 2013 -0200
+
+    don't touch Parameters::max_iter during optimization
+
+commit af6df5431ce1a6c2e713282946d4d15436e32ff1
+Merge: 78c51d0 c0b4caf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Jan 13 17:04:12 2013 -0200
+
+    Merge branch 'fix_optimization'
+
+commit 4644fbfe2e8eff7fd01e00393dd4b39aaa496761
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:23:47 2013 -0200
+
+    [resample] error.c -> error.cpp, inside a namespace
+
+commit de4e105d92241b6f3d9b69fb3905af0491f34144
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:21:07 2013 -0200
+
+    put resample functions in nehab namespace
+
+commit 0177b84cff7ff725b367872a4abd84211baa21ce
+Merge: 7e516f7 c0b4caf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:05:45 2013 -0200
+
+    Merge branch 'fix_optimization' into jing_version
+
+commit c0b4caf9983d1e66bf3ddf1e10d6b097badb7460
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:05:19 2013 -0200
+
+    be quiet during rescaling
+
+commit 1a5aa834c00931b27feffd2e4af5eb66b3e9e2c4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:02:27 2013 -0200
+
+    doesn't output intermediate halfway images
+
+commit 9ec3c977dcd29a7c0ef8444e6f8fe501f599c86d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 17:02:06 2013 -0200
+
+    don't use sse2, nvcc-5.0 doesn't like it
+
+commit 48494fb192ad903faf26d5e59d8875b1936de1fe
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 16:27:07 2013 -0200
+
+    added files to lib/resample/.gitignore
+
+commit 98eed35c12c02aa554a83bf8676b70b0c703e763
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 16:08:09 2013 -0200
+
+    use better downsampling method (nehab's resample lib)
+
+commit 778ddcca2ea1eaa511c082e9c69c1c6f01ba571d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 16:07:49 2013 -0200
+
+    fix saving of 1 byte per pixel images
+
+commit 6edd3379a31c2f11ccc0b9cf6fa621afe01ca0ff
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 16:07:26 2013 -0200
+
+    dimage::copy_to_host can specify output rowstride
+
+commit 138deefb2d1a533755cd3bd561f71a7308f5c6cf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 15:37:10 2013 -0200
+
+    fix resample input/output to dimage
+
+commit 7ac7613fed6bab6d1d97c5eba26aa6fe22f6d517
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 15:36:13 2013 -0200
+
+    fix dimage::copy_from_host with default input rowstride
+
+commit 9d7c65e467f0fe2dcfa5e71d483f3b370b169ae3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 13:42:46 2013 -0200
+
+    resample lib's rescale and input/output works with rod::dimage<float>
+
+commit bd9344ca851c5a7d7157e3c1030e8db26f7a8b02
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 13:42:26 2013 -0200
+
+    remove resample lib's original makefile
+
+commit b73be6cf68a544398aa2a0342fe2af12efa268ef
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 13:30:30 2013 -0200
+
+    cuda_free/delete implementation in .cpp
+
+commit e872e12e717302ebf78138cfe9909c2a111eb96a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 13:28:32 2013 -0200
+
+    added missing include headers
+
+commit 0b7031858d30b6a4351a13c0b6fcd998f0707d7d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 12:45:12 2013 -0200
+
+    add Nehab's resample library
+
+commit df1f17e11d51be52f2254386c9b03ee6d53ca5cd
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 12:38:51 2013 -0200
+
+    pass callback has cbdata pointer
+
+commit a2b56583c931d944a19b46073ec0a1c20099daf4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Jan 2 11:12:06 2013 -0200
+
+    don't use gpu_timer in render function
+
+commit 7e516f7ba44cb6ed7340265292d2659df2f3a97a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:28:25 2012 -0200
+
+    output halfway to callback each 0.2s
+
+commit 7c749e6ace72ca90f0661cf4e3810c31a059f06b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:40:48 2012 -0200
+
+    fix updating of matrix due to border condition in cpuoptim
+
+commit 2809f2845a278b3e62baf6158c53b02843788a9a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:38:03 2012 -0200
+
+    fix updating of matrix due to control points in cpuoptim
+
+commit b06a1e080777b9faa3bf983e8b532330a1265b75
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:29:21 2012 -0200
+
+    fix tps matrix in cpu optimization
+
+commit 834f0113787e0007e0eac6555c7dc5b82dbfb6b0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:29:01 2012 -0200
+
+    output intermediate halfway images to disk
+
+commit 8eacbf28ccfb3ff9162bea1b6884ba31c53244c5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:28:49 2012 -0200
+
+    adjust indenting
+
+commit 3c80b063901cc9796f79caab021cbd364560c5c2
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 20:28:25 2012 -0200
+
+    output halfway to callback each 0.2s
+
+commit 7fc78e81f295e0866abeb5a59a8708240c474074
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 18:23:23 2012 -0200
+
+    internal_vector_to_image can multiply output by value
+
+commit 11da12873f41ce811f80954ccc3bd2e4e397d475
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 29 17:24:04 2012 -0200
+
+    don't print when halfway image is sent to callbcack
+
+commit 65c8ead8b6902ee4b34c8a1226e76d2eedc789c8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Dec 28 11:28:52 2012 -0200
+
+    return current halfway to callback each 1s
+
+commit 6d477f95cfb1c7f3245b1c52dde3d51b98c22d04
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Dec 28 11:28:24 2012 -0200
+
+    added dimage swap
+
+commit 174bed187751a0de9309020aa2376bf0ab9093b2
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Dec 28 11:25:38 2012 -0200
+
+    fix cpu_timer::elapsed when timer is running
+
+commit c043c73bd2b06c544fe76eaa523d06bce6e039b0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Dec 28 11:10:09 2012 -0200
+
+    base_timer::elapsed doesn't stop the timer
+
+commit ef0976159df624c8e3f57fd24b05391db07ff1d1
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Dec 28 00:01:35 2012 -0200
+
+    create internal_vector_to_image (and vice-versa)
+
+commit c86204c44dc4166f08b30d998dca52d724c99733
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Dec 27 21:58:04 2012 -0200
+
+    rename ConstraintPoint members to lp and rp
+
+commit 020dfb5938ca9b3bf6962a2b43301ed4deb03623
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Dec 27 21:54:13 2012 -0200
+
+    add into Parameters members needed by Jing
+
+commit 67fbd50f06d79816b1692a2a98b4535725cb538d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Dec 27 21:50:20 2012 -0200
+
+    drop dependency of libmorph from libxml
+
+commit 8125dd215dbcab924c7ed93862c8fd656371b823
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 24 01:13:36 2012 -0200
+
+    default Parameters values in def ctor
+
+commit 3bdd55c6b2ae40f0b6fca3ef8bd139aeeb2a6f6a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 24 01:10:27 2012 -0200
+
+    remove spurious warning
+
+commit 4aa19626e83eb172bfd359c7faa8eb22234acde8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 24 01:09:53 2012 -0200
+
+    add comment that says how to convert dimage to dvector
+
+commit f33a83da357d824d376e55287707a1a0c2372bf5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 24 01:06:26 2012 -0200
+
+    allows a non-verbose processing
+
+commit 2f13ba2274eb8d7d418c66c02035def4c52c99c2
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 24 00:55:45 2012 -0200
+
+    call callback function in every iteration
+
+commit 4d6f9b7b800260a2e055db2a55c5bcf68509289e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Dec 23 13:20:57 2012 -0200
+
+    put main processing in a function, creating an API
+
+commit b3d0c7858c723b2d12609bf220289a97bcb14507
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Dec 23 13:10:12 2012 -0200
+
+    limit foldover_prevention return value
+
+commit 50c98135ca94dc2c752ec08e53766517e81f9e61
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Dec 23 13:08:20 2012 -0200
+
+    use get_halfway_parametrization function in upsample
+
+commit b8e6c56a29a6348df59ad4c70a3dc01c98ad7cf0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Dec 23 13:07:56 2012 -0200
+
+    added function get_halfway_parametrization from a pyrlevel
+
+commit 6db35fe811b17d69113093d152f15b381db90da8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Dec 23 12:42:44 2012 -0200
+
+    Parameter::max_iter is mutable
+
+commit aa24809d5ceafface6f73e5d2092951b76863377
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 22 23:58:20 2012 -0200
+
+    use cuda api call to retrieve pinned host memory addr.
+
+commit 27db09bb3ac8498177ec7600595d650fdcf01d7d
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 22 23:57:50 2012 -0200
+
+    input images relative to xml path
+
+commit e132033bb65041cffe9368d461ba3f6fda6a0286
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Sat Dec 22 23:56:51 2012 -0200
+
+    clip control points with negative coordinates
+
+commit 2bbedbd6b3cd3e3d778132321a16a98479ce9456
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Dec 18 23:29:52 2012 -0200
+
+    must include cmath for std::floor
+
+commit 1a70836f2e966b63c894a310e07140fb02fb0869
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Dec 18 23:29:34 2012 -0200
+
+    use CMAKE_HOST_COMPILER instead of setting ccbin
+
+commit d63421dbc9e67690e31271704f95e7d9aa858234
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 26 10:49:59 2012 -0200
+
+    image downsample in its own function
+
+commit 32070637909ccfe8d92d12196541e019086876fc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 19:58:22 2012 -0200
+
+    added image conversion from float to unsigned char
+
+commit ef75d969ca4bf1af9cb32c32c34d1c3db85deee8
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:41:51 2012 -0600
+
+    try to group all libraries in folder 'lib' in VC++ (doesn't work yet)
+
+commit 5f6347992ad2781dde674d48bf388324bf654779
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:16:30 2012 -0600
+
+    silence compile warnings in gpumorph main function
+
+commit 03adb75e57a460995f4c7137bcf4c82ec3679a96
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:16:10 2012 -0600
+
+    silence compiler warning in calc_ssim
+
+commit 5ee4eeda57cdc3a34f6ee82323326592a00b98b4
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:57:08 2012 -0600
+
+    fix compiler error for SM < 20
+
+commit 85b6ba646f24a4f7ca6b24ffdfc40c51ef5ff5a0
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:56:45 2012 -0600
+
+    added functions isinf and isnan, missing from VC++
+
+commit 999b347580dff5399ee54bda8d7e5fc6b87715f1
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:51:01 2012 -0600
+
+    supress compiler warnings for VC++
+
+commit 10c5fd96dd3a8d6e48634a86e859f8431b3e02eb
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:50:29 2012 -0600
+
+    erff for VC++ must be inline
+
+commit abc8725dc7bfce58c241cc2eb9f13f472ceea585
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:42:58 2012 -0600
+
+    fix compiler error in NVCC for Windows (VC++) in downsample
+
+commit 23026f0fd35aa70f41c3f805d72f81f47500d65b
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:19:29 2012 -0600
+
+    silence more VC++ type conversion compile warnings
+
+commit 798871bc85116c85037a8be8d61524221560f79d
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:18:13 2012 -0600
+
+    implementation of round() for VC++
+
+commit 4c2d1722ffb036c7171170813a4398364fd51740
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:14:39 2012 -0600
+
+    silence VC++ type conversion warnings
+
+commit 508d831c5a4646b39c599ede3840e05c96aa363c
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:09:39 2012 -0600
+
+    identity() without warnings in VC++
+
+commit b38b0dd1492e204ab59f299152d4cb7d282e0fc5
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:09:04 2012 -0600
+
+    dvector::copy_to_host (vector<bool>) without warnings in VC++
+
+commit 69b25ced3f6ff7062f6c84aff78466f283545872
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:02:32 2012 -0600
+
+    silence warnings our VC++ implemetation of erff
+
+commit b35f3ca4217e25e9dc20a54470e28fc3fc8ca5a6
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:54:26 2012 -0600
+
+    silence implicit float->int conversion warnings
+
+commit 69805186ec205bb6d01428f284f7796a0dd43b1b
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:49:57 2012 -0600
+
+    ssim_clamp argument to kernel_init_level must be float
+
+commit 12d42b9d0cb38fc2538084f42b5675b3906fb098
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:49:48 2012 -0600
+
+    added missing erff function in VC++
+
+commit c3f1beb007cd843299d4416535892d1118ad4a21
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:44:27 2012 -0600
+
+    disable unknown pragma warning in VC++ (for pragma unroll)
+
+commit 91e69807c993997e932beb4b964b1539c4405c51
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:44:14 2012 -0600
+
+    added missing rint for VC++
+
+commit ef0e52213b2cbf0582112e9260fabc8b60c73331
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:37:48 2012 -0600
+
+    fix to make VC++ happy on dimage_ptr::operator=
+
+commit a61da5e942094b7c4ac1cb998a7cd6a0782ccc10
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:29:12 2012 -0600
+
+    added is_same to util.h
+
+commit 7384f2a0550ea9326db30db60dee2bdae0726a49
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:20:27 2012 -0600
+
+    [dmath] silence some compile warnings
+
+commit 948284d223ec70dfbe7607adb72bab1ac08c9fce
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:11:32 2012 -0600
+
+    [strupr] silence compile warning
+
+commit 43137d829229d0ddde0e8f7da8baaef9c98be703
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:09:28 2012 -0600
+
+    dimage::operator* need to be inline to make VC++2008 happy
+
+commit a9090918e73eaa370f7c64417339acaa95f3324d
+Merge: 2e76879 ad79706
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Dec 18 22:34:14 2012 -0200
+
+    Merge branch 'jing_version' of code.rodsoft.org:gpumorph into jing_version
+
+commit 2e76879866d6197f685d93c34bfb04bb3e5b8f67
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 17 01:11:04 2012 -0200
+
+    add aux VC files to .gitignore
+
+commit 4936a0db6065fe96e17f274c98c44c45056ffcdf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Nov 7 12:53:13 2012 -0200
+
+    strip initial '\' of image files in xml
+
+commit 59b524b9deb7c0736d813c2a1c6578edfa9b909f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Nov 7 12:50:49 2012 -0200
+
+    return error if input image doesn't exist or is empty
+
+commit 442c7efef5367e92c209c6a334bbd5b294a6cb25
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 20:13:23 2012 -0200
+
+    [downsampling] include only the needed headers
+
+commit fbddc80126cc5fc6190ffdcfeb01a38030c2c06f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 20:11:51 2012 -0200
+
+    removed downsampling using GTK
+
+commit b7c85055be8be3ac8192a69d82ef76b4caf9f358
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 20:10:37 2012 -0200
+
+    added downsampling using opencv
+
+commit 62cf421198c50e807a80120039b3d6ffde5e543b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 19:59:01 2012 -0200
+
+    removed depedency on gtk+
+
+commit 78c51d022e1cba0aa147412b12bdbfaaa3d62b2f
+Merge: 94dbac0 4092839
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Dec 18 22:18:40 2012 -0200
+
+    Merge branch 'master' of code.rodsoft.org:gpumorph
+
+commit 4092839fd3ca97eb52401c748c4951f6c14de94d
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Mon Dec 17 01:11:04 2012 -0200
+
+    add aux VC files to .gitignore
+
+commit 74541868bfc9eefb1f9d6749e51349c058664cb5
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Wed Nov 14 00:25:13 2012 -0200
+
+    use cudaGetHostDevicePointer to make it work on windows
+
+commit 94dbac099e52bf1e3442f6d5106801534750c440
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Nov 7 12:53:13 2012 -0200
+
+    strip initial '\' of image files in xml
+
+commit 1d37a94d818eae5ec37d6fe6383b1a32d6a2d98d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Nov 7 12:50:49 2012 -0200
+
+    return error if input image doesn't exist or is empty
+
+commit 76a7c775cc467ec32af590b3d47d757a171932df
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Nov 7 12:47:37 2012 -0200
+
+    fix compilation on debug builds
+
+commit cb201e6cd2da4f0002ddb0a8a60cf635da3024e6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 20:13:23 2012 -0200
+
+    [downsampling] include only the needed headers
+
+commit ddf3bfca2b64655aa1b067699964a9feee68a08b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 20:11:51 2012 -0200
+
+    removed downsampling using GTK
+
+commit b8d6212fe10e53247ba6726aee7005d141d0504d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 20:10:37 2012 -0200
+
+    added downsampling using opencv
+
+commit e8f0d890e2499daa54a06a7e3a7547caa557fcff
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 19:59:01 2012 -0200
+
+    removed depedency on gtk+
+
+commit 4b03c70a249b20efcbbe97c94830f7a036519ef2
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 19:58:22 2012 -0200
+
+    added image conversion from float to unsigned char
+
+commit fee27c6b4679adb404ab954634343634c5640fb9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 19:54:47 2012 -0200
+
+    add back gtkmm
+
+commit 9ef32a63a258c3408858cb5540ae14f85e7090f6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:34:03 2012 -0200
+
+    readd include cmath to make dmath.h compile on linux
+
+commit d24bd1bc4b6bea01452613a3730bf044a014f435
+Merge: 43bdfa4 63df5e9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:10:08 2012 -0200
+
+    Merge branch 'master' of code.rodsoft.org:gpumorph
+    
+    Conflicts:
+    	src/morph.cu
+
+commit 63df5e945949664a0a4e465203015d0e40a74129
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:41:51 2012 -0600
+
+    try to group all libraries in folder 'lib' in VC++ (doesn't work yet)
+
+commit 55d1f59dbe9b32fd31e4631e037d2580fe28caec
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:16:30 2012 -0600
+
+    silence compile warnings in gpumorph main function
+
+commit 07dafbd19a0f13d6617fafe129d2cd371a304b2a
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 18:16:10 2012 -0600
+
+    silence compiler warning in calc_ssim
+
+commit f0ab1b5670906478292ff9892790e8a3d9766d6b
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:57:08 2012 -0600
+
+    fix compiler error for SM < 20
+
+commit 5b0ebeb9fe53928fe4093fcb2880147bc04ca7ca
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:56:45 2012 -0600
+
+    added functions isinf and isnan, missing from VC++
+
+commit 79806e7d25202059fc0f5cbfeb94d4ccda616632
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:51:01 2012 -0600
+
+    supress compiler warnings for VC++
+
+commit 49253894be1f3a5b56411a955dfd02c45ffc459d
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:50:29 2012 -0600
+
+    erff for VC++ must be inline
+
+commit bbca326729b2528c807681d97ec48b9d98cb39f9
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:42:58 2012 -0600
+
+    fix compiler error in NVCC for Windows (VC++) in downsample
+
+commit a4174be986dc891d2c9f906401684c14d6f8dc4e
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:19:29 2012 -0600
+
+    silence more VC++ type conversion compile warnings
+
+commit ea144ff8fd8ab2a27a4ecf6b1929578f2add5a97
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:18:13 2012 -0600
+
+    implementation of round() for VC++
+
+commit 0bfa2f6690a21bfd902668376107ab3102b772de
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:14:39 2012 -0600
+
+    silence VC++ type conversion warnings
+
+commit e01499e0c4b777447a1c4ba1d76cd2f3f2882230
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:09:39 2012 -0600
+
+    identity() without warnings in VC++
+
+commit 87c5753bb611c35faa6738af2691e3c36f77a66b
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:09:04 2012 -0600
+
+    dvector::copy_to_host (vector<bool>) without warnings in VC++
+
+commit 6349bded4603938ebf8f06c05a492acadf40beb2
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 17:02:32 2012 -0600
+
+    silence warnings our VC++ implemetation of erff
+
+commit 6f31f19df4d5b580dfd09cd348a43def0fc6ed7b
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:54:26 2012 -0600
+
+    silence implicit float->int conversion warnings
+
+commit 7c2c557ad9ed953c67be1b248d0566d799924416
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:49:57 2012 -0600
+
+    ssim_clamp argument to kernel_init_level must be float
+
+commit 0a1c4bb5e482724aecd5bb40d8339177f75ea356
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:49:48 2012 -0600
+
+    added missing erff function in VC++
+
+commit e5595e4e23ff1b9eb768f26cadf2a26e220a633e
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:44:27 2012 -0600
+
+    disable unknown pragma warning in VC++ (for pragma unroll)
+
+commit a050705fddc18c315bc45c94b0b50bbb76b38892
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:44:14 2012 -0600
+
+    added missing rint for VC++
+
+commit d2d4975a2d2f90fbc47b5d9ef67afea2ce01bd75
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:37:48 2012 -0600
+
+    fix to make VC++ happy on dimage_ptr::operator=
+
+commit 34b9f486e1d1156a716f0af0a865cfac70f32dc9
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:29:12 2012 -0600
+
+    added is_same to util.h
+
+commit ae7196bc9879b95c2460a9829314ca503800b64e
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:20:27 2012 -0600
+
+    [dmath] silence some compile warnings
+
+commit b8646a34047a25828f8c08a2dc9b046ef45a32b7
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:11:32 2012 -0600
+
+    [strupr] silence compile warning
+
+commit bba22ee30710282b25a378aefafd9aae6d7c4d27
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:09:28 2012 -0600
+
+    dimage::operator* need to be inline to make VC++2008 happy
+
+commit 573a10d00e2ce2c4e12e79678eea96965c783fb5
+Author: Rodolfo Schulz de Lima <rodolfo@rodsoft.org>
+Date:   Tue Nov 6 16:08:21 2012 -0600
+
+    added temporary files created by VC++2008 into .gitignore
+
+commit 43bdfa472c1dec72a15bb88b559f4d7cc30c9636
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Nov 4 12:37:21 2012 -0200
+
+    linear memory addressing
+
+commit 5086344c8ddde6dff2a2294debc627f48873efb0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Nov 2 17:24:51 2012 -0200
+
+    got rid of compiler warning
+
+commit a65e68e9ac3b62b510aef1e7070be68840063b07
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Nov 2 13:21:31 2012 -0200
+
+    kernel_optimize_level isn't a template anymore
+
+commit 78baa17cca68e8ffcf1d7913241ea53ad7e1d077
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 29 09:49:28 2012 -0200
+
+    simplify ssim equation
+
+commit 6beea35bac717a70b6f420660a1d655b572c282e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 28 22:32:39 2012 -0200
+
+    imagemagick still gives a better downsampling
+
+commit 3c93223913c76c54ebc00cfdecf349121e4a6057
+Merge: 8cd9eac e427a3b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 27 11:07:39 2012 -0200
+
+    Merge branch 'smaller_block'
+
+commit e427a3bd624a3c82db18010bd19ea71351ad3ed8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 27 11:07:10 2012 -0200
+
+    added smem processing of 32x8 block
+
+commit 8cd9eacad839144432bb9f314cd437317c4e8d7a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 26 11:20:06 2012 -0200
+
+    downsample using gdk's pixbuf composite function
+
+commit 9955152d00af6037a0255a23c76fdfea669014c5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 26 11:13:34 2012 -0200
+
+    fix copy_from_host when rowstride == 0
+
+commit 858de78ff5112f705c949fb9f91121aa4c576926
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 26 11:11:38 2012 -0200
+
+    conversion uchar3 -> float
+
+commit 04682542b25fc7c5d0963f58903f4514510361d9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 26 10:49:59 2012 -0200
+
+    image downsample in its own function
+
+commit e13441cdf752d3cb904efeddd201b7f39938c4d9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 25 11:57:44 2012 -0200
+
+    [optim] block size is a template parameter
+
+commit c3254fe2143422e353e68a03e7156a6e30adb9ba
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 24 23:26:02 2012 -0200
+
+    use 8x8 block (2 warps per block)
+
+commit 8ead49fa81f5d79048cb8f4a36d7df94412cf047
+Merge: 6d3600d 60f17b7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 23:26:21 2012 -0200
+
+    Merge branch 'master' into ssim_in_smem
+
+commit 60f17b75bd082318f1ad010811d375a25bd73a61
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 23:23:58 2012 -0200
+
+    fix smem area 6 addressing
+
+commit 6d3600d6311562d91302cb32b836d86c0d101ecb
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 22:48:12 2012 -0200
+
+    attempt to reduce regs usage
+
+commit 2a6fcd18330556a4a71f76b836ab2cc10d4180ca
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 22:44:03 2012 -0200
+
+    update ssim value in smem, has bugs (it's slow)
+
+commit cb34e13ac39a236fdce5c33e18014c71ec103ed0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 22:38:36 2012 -0200
+
+    shared memory processing in own function
+
+commit ffbda7a58e4aec06d91daecf75cea530b8e8c9f5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 16:23:58 2012 -0200
+
+    rename ssim to ssimdata in smem load/store functions
+
+commit e74934ea8ff6c3426514884e35e660fb3d7912bd
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 15:58:21 2012 -0200
+
+    only get counter from gmem when near border
+
+commit 82ef40e9c7dcdd0c5e410c08793696c71cb0b194
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 15:51:44 2012 -0200
+
+    put 2-pixel border in smem too
+
+commit f110b4b8b26f191ca747562cb027d876e20908a6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 13:40:19 2012 -0200
+
+    optimum grad calculation in its own function
+
+commit f6203ff9aab4e02a70b51aaab10d7cf7db9e2973
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 13:36:18 2012 -0200
+
+    load/store from/to shared memory in their own functions
+
+commit 023b05d320a39fc88e5ec2783fb51fc438550867
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 13:33:02 2012 -0200
+
+    update v before syncthreads
+
+commit 53839d090430e2fb12df47f976399b9d84b26128
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 13:26:28 2012 -0200
+
+    reduce scope of fmin,tmin
+
+commit c0ee3b5c195aa2a5454764d510028677e77e2789
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 13:24:06 2012 -0200
+
+    revert creation of optimize_pixel function, there were some bugs
+
+commit fc5083868e6d1ed988ccd67ea310d030407acdff
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 13:22:39 2012 -0200
+
+    must syncthreads after commiting
+
+commit dc3ff125259af0babe7a66de7dd0c91c84410713
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 11:59:24 2012 -0200
+
+    simplify smem load/store addressing
+
+commit b36dc3074d310808f628c40a92a3f2d55e510197
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 00:24:27 2012 -0200
+
+    fix improving check
+
+commit 696685cf4f6304e1edfd3fa68b72b3698a34c3ac
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 00:19:35 2012 -0200
+
+    fix smem data loading
+
+commit 986151af6a7e4ce3c54caedadaf85b8ec2a1aab4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 00:07:39 2012 -0200
+
+    scheme where 2x2 block is processed in kernel (doesn't work yet)
+
+commit ba3160a09d06dff52b8414e0e67b2b6d7e5fffca
+Merge: ad79706 cddbba9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 10:16:47 2012 -0200
+
+    Merge branch 'more_parallelism'
+
+commit cddbba920cf3680501e69777f8d54c5739c01473
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 23 00:03:36 2012 -0200
+
+    add debug info even in non-debug builds
+
+commit d139ba612c8f046b5c6c1378364b95900c26c879
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 22 18:36:12 2012 -0200
+
+    using shared memory for ssim data in ssim_change
+
+commit 4f735f46f90dad243ed068712a69ea472e77969d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 22 16:32:28 2012 -0200
+
+    call prevent_foldover in a separate line
+
+commit f3d663211ea3b72e119ddc53f45a308f22901b5b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 22 16:18:35 2012 -0200
+
+    function reorganization
+
+commit f70dac3e46e6f9c55a2eb17d7f97ecf58e309bb9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 22 16:16:24 2012 -0200
+
+    typo in comment
+
+commit 063ed400afb7ab2096c1029551e170bb725a0344
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 21 07:23:09 2012 -0200
+
+    fix current pixel's block calculation
+
+commit ad797062f5bce7ede86b6948c9981e94360e8637
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 23:46:57 2012 -0300
+
+    fix compiling error
+
+commit 606930eabdf506efeb2e64aca525e0d376123eda
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 23:00:50 2012 -0300
+
+    set spacing to 5 pixels, new record
+
+commit 608974f55fc80c0b0b4b2fc7c6dc5c5cb5a9746d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 22:55:21 2012 -0300
+
+    better positioning of blocks to process spaces
+
+commit 9e0ba9a3818924de5b4358fdacc4dee882075644
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 22:45:56 2012 -0300
+
+    fix kernel launches, now output is really OK
+
+commit fbb5d43870d8352b5023b5eb084ec89f6e95cb1c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 21:47:00 2012 -0300
+
+    set impmask == false only at end if pixel doesn't improve
+
+commit 774df1a780a2cc393e5e72be842e258d35938698
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 21:43:01 2012 -0300
+
+    fix grid size!
+
+commit 6ab6f1a6021150e8cc5097e77cbcdf41b8d0d3bf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 21:38:22 2012 -0300
+
+    less calls to optimization kernel
+
+commit 4a4b8a3f4b4c97de09b8c8b832e6c0d4ba8fdde1
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 21:21:00 2012 -0300
+
+    block calc needed only in impmask calc
+
+commit 929756eaf7740a46cb2dee8900ca1b4d1d37544a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 21:19:23 2012 -0300
+
+    using syncthreads between grad calc and commit
+
+commit d5c303a5fb4b0cf606ec464f50f1683cd5ab63ee
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 20:41:56 2012 -0300
+
+    do not save ssim value, always calculate (testing)
+
+commit dee4741529383c4aff681643cad2ae5301c354aa
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 20:09:52 2012 -0300
+
+    fixed grid dimensions and spacing
+
+commit 35633167cc78d79947ab71ef6b5c1ef00a41185d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 19:56:21 2012 -0300
+
+    new parallel scheme compiles, but doesn't work yet
+
+commit 89068c42efd7605333f3440097d8006fa85ad300
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 01:10:48 2012 -0300
+
+    added operator/(int2,int)
+
+commit 429bbd299df970869d29afed24ab477859f1df05
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 01:05:07 2012 -0300
+
+    golden_section_search in its own function
+
+commit 6d65f557530bd491e75751aa915717bc31203455
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 00:57:46 2012 -0300
+
+    border test in its own function
+
+commit d6ade1250698e5e7a57e3af00fc98bab2f4829aa
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 00:55:58 2012 -0300
+
+    pixel improving check in own function
+
+commit 4e1e11f41b5dda2c26e3a61ada77567519649d7e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 00:15:17 2012 -0300
+
+    do some substractions only one in intersection code
+
+commit beda3adf8f4ae839edc2db5f17a5a41cfb1a6466
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 20 00:12:37 2012 -0300
+
+    pass gradient to intersection routine
+
+commit 098b669583634e3910db545446f8f28c81fc3838
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 23:56:32 2012 -0300
+
+    pixel can move farther than 1 if there's room
+
+commit 18d5feec93dc8fc476d6726bb2bf082a01bf420c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 23:52:22 2012 -0300
+
+    adjust foldover value (subtract epsilon from it)
+
+commit 9b8e8647b1c2da9375e078d72634dfbbb084d8a5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 23:49:20 2012 -0300
+
+    only do determinant division if t < t_min
+
+commit f8ad7d9da3aedfcd52e78aa17929ee7c5dc5573a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 23:41:08 2012 -0300
+
+    don't keep determinant of intersection around
+
+commit cd553bd63fa7dc0092d15bb29e3858e7bbbe1d0d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 23:28:02 2012 -0300
+
+    [fover_update_isec_min] don't need return value
+
+commit 0dcb9248d184ca442ca109ef466ffcbb0db3f9cf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 23:25:31 2012 -0300
+
+    better comments in intersection code
+
+commit 9a04d5d48583c8ab68863e974ba7ff2a4eda07b8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 22:52:46 2012 -0300
+
+    tweaks in intersection code
+
+commit 9b4aa9b96a86779b6a3711376ab052b8aa6ff297
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 22:47:06 2012 -0300
+
+    don't need to keep has_isect variable around
+
+commit 51af62ea4e978e65232d43ddc17bb2cb587e3605
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 22:45:10 2012 -0300
+
+    signals intersection with td >= 0
+
+commit fa7e9e728fed2f718deae5da7ad52eb8be8faf01
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 19:53:31 2012 -0300
+
+    renamed some variables to convey better prevent_foldover intent
+
+commit d94b41d98c374faf3cefb43816548d2c0c02b578
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 13:19:29 2012 -0300
+
+    border code in PixelData
+
+commit 6068fa2861b5a9b069597e6cebce135638c77236
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 13:12:21 2012 -0300
+
+    don't need to 'or' the has_flag the first time
+
+commit 1b0a0e81613b065d419043055bd29010560e9f2c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 13:10:16 2012 -0300
+
+    simplify register usage in foldover
+
+commit 7bddb10cd23f6af002201ccba1aa672325a19fd7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 19 11:10:55 2012 -0300
+
+    little optimization on foldover
+
+commit c7977ffe340e5fcbfd2ce818b7ee029d038d19a6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 18 14:05:43 2012 -0300
+
+    add file explaining gold section optimization
+
+commit 5953869b8f0090355f8449ce37d1b472dd0bc717
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 18 13:54:46 2012 -0300
+
+    now doing 2 (equal) comparisions is better
+
+commit 4a492454d2b4761e95f3f8e1c683d9a51c6a5b94
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 18 13:36:13 2012 -0300
+
+    compare only once, save result for later
+
+commit f32e98b7c01df3898509c4a9566ca34abeddb0f4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 18 13:34:25 2012 -0300
+
+    my attempt on (re)implementing golden section optimization
+
+commit 6781e038cd4f36b73980e68b94c97bb6f9f441ba
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 11 00:33:12 2012 -0300
+
+    atomicAdd for float2
+
+commit ec60774214ba0f98e8af6705e870580053e00f4b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 10:39:13 2012 -0300
+
+    use fmodf in ssim
+
+commit 57ffa1f6beb530afae7d6d47f16581953415d36e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 10:38:49 2012 -0300
+
+    add commented out use of hypot do normalize gradient (is slower)
+
+commit 56c73ece25610b578a85b876afc7dfc829b1b797
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 02:05:25 2012 -0300
+
+    we don't need calc_border_limits anymore
+
+commit 46c8c710041af14195e837e79ef6de2eb5c01785
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 02:04:59 2012 -0300
+
+    branchless calc_border
+
+commit 053c3c1690e399ac9dfe57acb226c806f29d3733
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 01:16:24 2012 -0300
+
+    simplify fover_calc_n
+
+commit ee2e21982f9b072b1971e90bb1ad5ac13d3cbd11
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 01:08:22 2012 -0300
+
+    even more optimizations in intersection code
+
+commit 4724b6366c8d16f3fb31ad6f54010335df2f29d1
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 00:59:39 2012 -0300
+
+    more simplifications in intersection code
+
+commit d783baa8d15275c9d2b01e70520f345c19dd55ec
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 00:54:49 2012 -0300
+
+    minimize branch divergence in intersection function
+
+commit b059a2a63eb9ffbd8cb6ee9f5f209bab95e9e2c3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 00:44:13 2012 -0300
+
+    trying to minimize warp divergence in golden section opt.
+
+commit 59a08b9b792abbf56ba6161abd33a3da5c10db45
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 17 00:07:17 2012 -0300
+
+    calc dmean,dvar and dcross outside of the loop
+
+commit 6e363fd36f89a4079b91410698f276f0cacd4d46
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 23:59:58 2012 -0300
+
+    -use_fast_math only in non-debug builds
+
+commit 44fddfad3e803f675b4076232e09d7b1d3846f4a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 23:37:20 2012 -0300
+
+    add -DNDEBUG to nvcc when not in debug mode
+
+commit 90cd0e4c8df8cb95c79f8d7c531969f7229aa72a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 23:27:35 2012 -0300
+
+    sprinkled assert()'s all over the code
+
+commit 145e35cf8a696b973aca513df54fb2d80b2e04ae
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 22:52:23 2012 -0300
+
+    add line info in device code
+
+commit 9840cda9261098d57f66f9da3ffa374af75f2bb4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 17:37:20 2012 -0300
+
+    due to unified address space, use 'improving' in host and device
+
+commit f75c204f8d97fc32fb4d66ebb5b8f8cea385358e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 17:35:43 2012 -0300
+
+    check improving flag at the end of the loop
+
+commit 8749eea1a3ce0d011f4a32d6c2e103c726422df9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 16:47:05 2012 -0300
+
+    pass v+d to commit_pixel_motion
+
+commit 53ea9b897a4ed843221474d4df9b45ff5a17102d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 16:44:20 2012 -0300
+
+    calc impmask_idx from block calculated from threadIdx
+
+commit 733339f70c458c58faeb88a9f01597b376a42463
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 16:35:29 2012 -0300
+
+    [init_level] tps update now works even if in border
+
+commit 67a0381b27002dd16bcdb8eae1a1e75ddfb7da7c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 16:33:35 2012 -0300
+
+    must initialize v border to 0
+
+commit 29e8e2d151809f371efe594300b7a1f445ed85a6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 15:56:59 2012 -0300
+
+    added *.session to .gitignore
+
+commit 78b97e7121c806d5608237833200f5871893ef62
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 15:56:39 2012 -0300
+
+    fixed symbol management to work with cuda 5
+
+commit 513d12a6609e0ad34b3121f385f828faf24fbb53
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 15:52:06 2012 -0300
+
+    added begin/end iterators to array
+
+commit 86ec4eb8cc1c2b8b2ee35f3368912d34790bd695
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 14:18:16 2012 -0300
+
+    we don't need cutil_math.h in morph.cu
+
+commit 74f0e335bc50e0509a5395aeb5c91454f7765774
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 14:17:46 2012 -0300
+
+    remove warning about not finding cuda sdk, we don't need it
+
+commit 9bf1817abbd02b9e14c663e3a144ec024706183e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 14:17:07 2012 -0300
+
+    don't pass textures by reference (nvcc-5 doesn't let us do it)
+
+commit 8f91ee712e48c2010fde656a33dc72a2aa4a3a2d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 14:16:36 2012 -0300
+
+    imgop_basic.cu don't need cutil.h
+
+commit bf03dee0a59c8ee7cb5d2f5628dd1776b8b6c324
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 14:15:51 2012 -0300
+
+    silence cuda 5's nvcc warning
+
+commit baa88b0753a7e92906dc789fe9c0ba9c1cb098dd
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 14:15:17 2012 -0300
+
+    added cuda 5's helper_math.h into dmath.h, no dependency on sdk
+
+commit 0375567c3d9720bf1afd7477fe964cd42d70568b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 09:39:55 2012 -0300
+
+    avoid modulo operation on block size calculation
+
+commit 723e97c7061ef1dc1b1b095500c767892dff839c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 09:32:12 2012 -0300
+
+    optim parameters in constant memory
+
+commit 858d05e4b47b3bb6dc765e24ff846722f21d810e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 01:13:37 2012 -0300
+
+    use of pinned memory for improving flag
+
+commit f32214f637b23d23b56d8556f8c6ee16b24b2ff8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 16 00:11:49 2012 -0300
+
+    [init_level] tps update must be inside mask if-clause
+
+commit 3506d26bf4e2c4d5063d4202429dbf2da7b63970
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 23:49:04 2012 -0300
+
+    [ssim_update] ssim calc only when iomask==1
+
+commit 79ded20489e2c7c244dc65ca841953235bf9e832
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 23:33:18 2012 -0300
+
+    simplified inner loop on commit_pixel_motion
+
+commit eee92c087ac5d4774aa137a243ebefa01c5fb15f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 22:27:14 2012 -0300
+
+    ssim_change/update inner loops optimized
+
+commit d015cc1b46d4c4e0240d619d54cef8bccee2eb3f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 22:23:02 2012 -0300
+
+    ssim_update split into ssim_update and ssim_change
+
+commit 399cef4f92db31fc17a0c4d09609e906770141de
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 22:01:16 2012 -0300
+
+    ssim, 1 = equal images, 0 = different images
+
+commit 81de474fc88d09cbe1129154fd90e542aef71a0e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 21:44:25 2012 -0300
+
+    init_level inner loop without conditionals
+
+commit 441836600a0137a52d3f0b0cbf9b30978aa2bdd5
+Merge: 99953a3 1b8cece
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 21:27:49 2012 -0300
+
+    Merge branch 'master' into block_padding
+
+commit 1b8cecef1380924ebe40edf0e1517f5727772cbd
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 21:27:04 2012 -0300
+
+    startres can be less than 16, "animals" is better with 8
+
+commit 99953a3b95c793aaef69d8f05320fd9db4e6e385
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 17:37:16 2012 -0300
+
+    ssim_update: use c_iomask
+
+commit f137fd723a72557f2221269c824f59d1609233f5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 15:55:35 2012 -0300
+
+    use c_iomask to avoid acessing data outside image
+
+commit 9206cd6e5b651e1f9bcb54d9b439f6e6f7a0fbbe
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 15:52:40 2012 -0300
+
+    initialize border of data arrays to 0
+
+commit b10587f3bd9d3480209a6f9a92e766cc48c6b1d5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 15:43:00 2012 -0300
+
+    add 1-block border around data
+
+commit a1e95b4db9a930781e6af8466a2baff3ad05424a
+Merge: 03b3f2c 41af5d2
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 14:37:26 2012 -0300
+
+    Merge branch 'master' into block_padding
+
+commit 41af5d2ebf4bd739f99dd86a6eaeff92d022df21
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 14:37:07 2012 -0300
+
+    fixed improving_mask indexing
+
+commit 03b3f2cf9547ef8ed0fd109c4c43639abb9f9cbb
+Merge: 3de5490 21b2677
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 14:14:58 2012 -0300
+
+    Merge branch 'master' into block_padding
+
+commit 21b26770ab4783b65883825977e1149f97bccbf5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 14:14:37 2012 -0300
+
+    fix setting of improving_mask in kernel
+
+commit 3de54909f829b33065cc2b5acecc8ce4a1534235
+Merge: ac8a052 9003d08
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 12:06:17 2012 -0300
+
+    Merge branch 'master' into block_padding
+
+commit 9003d08f4fff4a7e76cdc84fc922d4b1c2d422d9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 12:05:57 2012 -0300
+
+    fix improving_mask alloc size
+
+commit ac8a0520424b3e5e54efb65bf044e80103576a31
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 11:32:28 2012 -0300
+
+    add c_iomask and initialize it
+
+commit 122fdc11155e9059d9e84734201f72caf194ce42
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 11:31:32 2012 -0300
+
+    add printf for cc >= 2.0
+
+commit 9c56b34d8b16e0f8b0c570f62980d570a7e63562
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 11:28:10 2012 -0300
+
+    function to create io mask stencils
+
+commit e2d4e9a7691e36505f10ce5c942d611a44bb4ea9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 15 08:59:22 2012 -0300
+
+    minimum start_res is 16
+
+commit 19aa4148d200985674498c9b69952862796c7093
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 23:30:07 2012 -0300
+
+    add gcc-4.5.4 in the list of compilers to find for cuda
+
+commit 82d0c2642ce29f8479671dc916f43e96ee28ceba
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 22:44:53 2012 -0300
+
+    can switch between using imagemagick or cuda for downsampling
+
+commit f438b11f6a9daf1b73c89d80d01e6baca95def26
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 19:40:33 2012 -0300
+
+    saving and loading of uchar1/3 images
+
+commit f7dc0cb5bbd388951fc09a8d5ad71e1c0c94fb0b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 18:49:31 2012 -0300
+
+    more conversions between uchar1/2/3/4 and floats
+
+commit 6ed38bbfcb4d1d1b7837396df3296cd1492fa2b4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 18:48:56 2012 -0300
+
+    fix copy_from/to_host when rowstride isn't the default one
+
+commit 39add976fb0eb060b360a2325ff9808142226eb8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 16:58:32 2012 -0300
+
+    fix copy_from/to_host assertion when rowstride==0
+
+commit 2f59a756d06f3642a119ab541f583b49c18cd385
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 16:21:39 2012 -0300
+
+    fix initialization of ui data points in right/bottom boundary
+
+commit 019df7516c69c3ba898de57e034ff56f94a757b7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 16:21:03 2012 -0300
+
+    added .dat to .gitignore
+
+commit 7ae0bd008312dbf418afc8627f87c307bc9909f4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 16:20:33 2012 -0300
+
+    operator +,-,*,/ between double2 and int2
+
+commit 1f163646de771957318cecf349636bf029036e37
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 13:07:54 2012 -0300
+
+    specialize load for dimage<float>, not dimage<float1>
+
+commit f3777797f7dc2e034c628fbd4b914190280f98f7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 17:10:45 2012 -0300
+
+    do not sample at pixel center (as per MdiEditor)
+
+commit c3de4fa1e6130069f0571b4fabedab3306f7ca41
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 14 12:20:05 2012 -0300
+
+    put impmask offsets in constant memory
+
+commit 9e89a8c6db8469be7113c1d1d6e3cc2df6db29b9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 13 23:39:47 2012 -0300
+
+    negation operator for const float2, float3 and float4
+
+commit 05cb785bb6ea59fe7ff03beb4c982dbdd1870fed
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 13 23:27:45 2012 -0300
+
+    implemented improving mask as bitmap
+
+commit 2d9dbe486ea44a7af10379cd28b9500d3fe6951e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 13 09:33:33 2012 -0300
+
+    unidimensional grid, somewhat faster processing
+
+commit 8278e06a0e2c722c294cf3ca58d31f5ebf6a063e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 13 09:09:46 2012 -0300
+
+    show grid size in each level optimization
+
+commit 204d9ffc7b85e6219445049e31a23d334a5c304d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 13 09:00:13 2012 -0300
+
+    added *.bmp to .gitignore
+
+commit 92915c29886c4d978d4be00992029117273d14d0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 13 00:33:56 2012 -0300
+
+    accept two images in command line
+
+commit c77230a1fc6eb5cf84a0948e7a2590dc9d6ffa7f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 12 21:33:14 2012 -0300
+
+    added cuda mutex
+
+commit fda95b17ef02ffb5a272590e4d9f25c55abed8c6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 12 13:03:03 2012 -0300
+
+    move pow2 from morph.cu to dmath.h
+
+commit 3d54ce75bd579bec936590953717dc36caca6100
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 12 12:55:02 2012 -0300
+
+    we don't need to update counter
+
+commit c8e417778e45d6db51fd361a3ed84cf793025c6a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 11 11:53:13 2012 -0300
+
+    optim launch_bounds for cc 3.0
+
+commit e5f3744753b1586924646ec6d96a648ba3943cd8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 22:30:36 2012 -0300
+
+    fix linking error of cuPrintf stuff when CUDA_SM >= 20
+
+commit 86c631182a0a49dc20112c8584eb52c1b60c3527
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 22:30:25 2012 -0300
+
+    default is USE_SM=30
+
+commit b7d045f988a2f70c934078d6ec6fe0bf5cb81ca0
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 17:53:59 2012 -0300
+
+    only calc ssim change when needed
+
+commit 8e2fdc5e9be5817ba8c80b9a440cb5bcbddcdb71
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 16:59:32 2012 -0300
+
+    align pixels on 128 byte boundary.
+
+commit 8d75b0690997676a1a952c55402eb41be2ba954c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 16:40:53 2012 -0300
+
+    rename cross01 -> cross
+
+commit 97f2fbcc9f183ea2e7776c5fbeac8aba5baf1064
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 15:29:22 2012 -0300
+
+    rename blocks_row/col to blockdim and blocks_num to pixstride
+
+commit b3625925f14fa8b069b4de06558e84ac17726a82
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 15:23:12 2012 -0300
+
+    blocks_row is really blocks per row (same with cols)
+
+commit 18e58927f1c12e970f1826c58cdc5ea18f179415
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 12:07:03 2012 -0300
+
+    add paper on SSIM
+
+commit 4ad1748a6a511056c7acb82aebbe3ba1972c77a1
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 12:04:39 2012 -0300
+
+    substitute ssim constants by value dependent on input dynamic range
+
+commit 888f7da17ecffd5e2c19a0ef54e666ebefc7de5a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 10:26:28 2012 -0300
+
+    [optim] load ssim.luma only once
+
+commit ba56e02445806c37ab1f68567589135f8737c27a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 10:21:06 2012 -0300
+
+    put init and optim phases in its own source files
+
+commit 8c2c99adc4a9d63dec114a0392738e14326b3edf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 01:38:03 2012 -0300
+
+    [optlevel] small adjustment in launch bounds
+
+commit b8fa6438f04326a016a78b7ab3746de4bf422f66
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 01:33:17 2012 -0300
+
+    new foldover matches previous attempt!
+
+commit b82b2ebd6109dfa953f35d314fbc68b33c2b2b3a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 10 00:59:21 2012 -0300
+
+    trying foldover that doesn't spill regs, don't work yet
+
+commit 6e2daa58a8553c6f54ca51621e33022ab305149d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 23:28:49 2012 -0300
+
+    don't need to zero out vectors
+
+commit 2b8425411439c5e11d3f8cb534687a0761c3d948
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 23:25:33 2012 -0300
+
+    [dvector] fillzero -> fill(byte)
+
+commit 2b35bb7b5fbe46cf2427f80d0bb4ccc3ae170524
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 23:13:40 2012 -0300
+
+    [init,opt] added launch bounds, animals 16s -> 14.7s
+
+commit af4cb43f5429eed44ec83007c6955114a8a78d53
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 22:24:03 2012 -0300
+
+    fiddling with compiler options, 20s -> 16s (animals)
+
+commit 314cea92f72903ccff076701c352ed6a82fae6de
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 20:21:26 2012 -0300
+
+    avoid 'if' inside block loop by using correct loop limits
+
+commit 3a69811f9875f92e0603ae67cea453a53d99162f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 19:47:49 2012 -0300
+
+    [optlevel] don't load v multiple times from gmem
+
+commit 1826eb38010366e52418636c1f16d84e90d55c6c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 19:32:58 2012 -0300
+
+    [prevent_foldover] ring coords relative to center pixel
+
+commit 98264fc690e419ee634079d6995233718ed25f9c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 19:27:16 2012 -0300
+
+    [optlevel] don't calc grad if we'll exit due to bcond
+
+commit b25f45a81c39bb695f566328ae9e1bd8dfb87f01
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 19:22:27 2012 -0300
+
+    use double2 for contraint points in Parameters
+
+commit d8807d273a5616596bbf8782352f8447475e8426
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 19:12:21 2012 -0300
+
+    all make_* conv functions in dmath.h (from cuda_traits.h)
+
+commit b6f0a088226fb874d4d388ee461c93f5ef73035b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 19:10:26 2012 -0300
+
+    [dmath] fix compile error when included from cpp
+
+commit 10b26502df2ded51d81b6bd7fdbac4e6dc67a32b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 18:31:42 2012 -0300
+
+    added support for double1/2/3/4 to cuda_traits
+
+commit f18314b02813f30b750b8e704bb0f65348c9ed69
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 18:28:39 2012 -0300
+
+    added several operators involving double2
+
+commit dead329a7f5498f80d2b4c432f3bc52f92db278c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 18:10:19 2012 -0300
+
+    use PixelData in init_level and encapsulate nbindex calc.
+
+commit fe4b0dae81b1c9ffa46a7dd43e6256115b3fee50
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 16:45:55 2012 -0300
+
+    mem_index accepts int2, and use sqrt(float2)
+
+commit 98b665593e9e57a96095b7402633fe70fab5ace8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 16:44:18 2012 -0300
+
+    [dimage] is_inside and offset_at accepts int2
+
+commit 7f1b642fad95deced57b91d9914cddc3252c13e7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 16:43:48 2012 -0300
+
+    operator + and - between int2 and float2, and sqrt(float2)
+
+commit e1c0c55d0bd9b0331f868924ed65734ac59fcede
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 16:27:24 2012 -0300
+
+    PixelData's x,y,nx,ny -> pos,offset
+
+commit 71b54a3b617574a19db38156f31bea61762889a7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 16:26:25 2012 -0300
+
+    operator% for int2 and int2/int
+
+commit 017efdf1c38b75bb4265a3bbd8256d9d7b699dde
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 16:04:29 2012 -0300
+
+    [prevent_foldover] reduce register usage
+
+commit 29d89c5bf6289bffd400792eb7fa364818dc0c17
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 15:55:22 2012 -0300
+
+    KernPyramidLevel's width/height -> pixdim.x/pixdim.y
+
+commit 14e1e64d24b777e2eef80f79d788a8c1d43bd129
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 15:48:51 2012 -0300
+
+    use contains/contains_x/contains_y pixel throughout
+
+commit 38e39b33cc2a79508aac12d20deb2efa679a129d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 15:08:34 2012 -0300
+
+    [optimize_level] just show total iteration count
+
+commit aeab15f54655edef8ba701452527e4da23d4d43a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 10:11:22 2012 -0300
+
+    [xml parser] do same fp conversions of ctrl points as MdiEditor does
+
+commit e06060d07b4b02fcde01e3a2b82c64e3e849a0dc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 00:38:23 2012 -0300
+
+    saving of grayscale dimage's
+
+commit e00152337223ec75621cfd4d8ce34114937f4eb8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 00:36:27 2012 -0300
+
+    [convert] uchar1/2/4 -> float
+
+commit 120eea621afe9ff6873499bb08c9e81e00708285
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 00:34:26 2012 -0300
+
+    [convert] conversion between uchar1/2/4 and float1
+
+commit f6b60a7a6cac2edae96bd8b352b1e7b4f2554c85
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 9 00:33:52 2012 -0300
+
+    [cuda_traits] conversion between composite and non-composite types
+
+commit 4499b2cc6ec3f358ccf6fe21a92be1df9e27e904
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 22:38:10 2012 -0300
+
+    [render_halfway] fix, it was completely botched by last commit
+
+commit 2c1767bc72b6070cfa93edbb8c9038e3f832c652
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 21:43:08 2012 -0300
+
+    [render_halfway_image] use bilinear sampling (and textures)
+
+commit c57c3eb0f02521332951a7a78302ab29a93e0083
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 21:16:41 2012 -0300
+
+    [copy_to/from_array] don't need explicit specialization for float3
+
+commit 7744aa1c9aa644ef904d6f0441586f8741df7647
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 21:00:43 2012 -0300
+
+    [cpu_optim] bug on ui initialization, now result looks ok!
+
+commit 6569f9f8946759c9d6f33db126864ed49bdb1133
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 16:03:37 2012 -0300
+
+    [render_halfway_image] fix compositing
+
+commit e80b0c459cfa6e47be3fede373d659b9d3ca17a3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 15:12:15 2012 -0300
+
+    [commit_pixel_motion] minor optimization in tps updating
+
+commit ec0affc7d2128bb0bf86f717850ee6a61df9b8c8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 14:58:31 2012 -0300
+
+    [prevent_foldover] fix onering traversal
+
+commit 826cf6d24a1aaebc7f47a8f406474a05bcdfa42b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 14:45:19 2012 -0300
+
+    implement max_iter drop factor
+
+commit 90275c0cbfa1ead56b7d9ee0af3e326ce69c9ad3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 14:38:05 2012 -0300
+
+    [calc_borders] bug corrected
+
+commit 6ef7ad37b8a6faa9028c6204e8233c286e63feab
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 13:51:00 2012 -0300
+
+    [img save]: infer format from extension
+
+commit 717a6c64c5f10e2cbf54b47724ba04b8d3899a93
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 13:38:25 2012 -0300
+
+    added *.xml to .gitignore
+
+commit 9664db10a66f6cc2ce0f6428f2d7376c59ccfe26
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 13:15:16 2012 -0300
+
+    setup axy, bx and by in cpuoptim
+
+commit 2b76b05e52735f3605920172745b69ac6416dcfe
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 13:07:08 2012 -0300
+
+    ui.axy and ui.b initialization from control points
+
+commit 6ca97f9b3ea95b8d6bda6a8c471dd2eed3cc62ce
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:56:12 2012 -0300
+
+    fix checking of image dimensions
+
+commit e23fb7148918308547fc182cfffbbe60df09ec93
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:55:09 2012 -0300
+
+    image io (save/load) into imgio.cpp/h
+
+commit 62c702789804a53b1d9a1b6316e785db4c26e283
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:48:04 2012 -0300
+
+    got rid of pch, doesn't work with VC++
+
+commit 6cc5fb3314d63d8fca0d1ca4198c3cf32abb3dcd
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:39:33 2012 -0300
+
+    gpumorph.cpp -> main.cpp
+
+commit d4f100eddaf36d2cb852443b69d1ed1fea101fb6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:36:49 2012 -0300
+
+    parsing of ui control points into Parameters
+
+commit 1ee41d87e5090c89023fcf45cd29dbe79070fcd3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:32:01 2012 -0300
+
+    don't need to explicitely pass type to get_data
+
+commit 6ded791fe8a0859c7fdaad1acd9d453379d7c0f8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:29:43 2012 -0300
+
+    fixed parsing of string data from xml
+
+commit 42fdf58ff285a786134117e33920ac4c8d04eea7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 12:24:31 2012 -0300
+
+    fixed xml parsing
+
+commit b6bc6adcb1429e2a84d88fb8fdd5e7edd06f0c79
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 11:55:59 2012 -0300
+
+    parameter def and parsing in parameters.h/cpp
+
+commit 067393cc6f8af70dc7d675c3124dc3b36908dd3d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 11:51:39 2012 -0300
+
+    read config from xml (MdiEditor format)
+
+commit e9af83431f614c1f345616324162c59d3fb280df
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 11:35:15 2012 -0300
+
+    fname0 and fname1 in Parameters
+
+commit d8fb99b67e5d29cc795551d33e620496cfe852c8
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 11:33:44 2012 -0300
+
+    keep convention: *0 -> 1st image, *1 -> 2nd image
+
+commit 4f38e4d530e9cf9e347d0647ccadab13986a1d83
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 11:28:50 2012 -0300
+
+    start_res parameter in Parameters
+
+commit bbdc40957ad44641742e278721b7106ac43e6e74
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 11:03:01 2012 -0300
+
+    create_pyramid in pyramid.cpp
+
+commit 2972a6d1d494a7532919ee79ac9f387ae9514314
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 10:56:53 2012 -0300
+
+    KernParameters has a subset of Parameters
+
+commit eda1b768f049e7f57ee09784d77a05f09b45e5df
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 10:24:02 2012 -0300
+
+    cpu optimization in its own source file
+
+commit ae37fbbea0c5c3309d38d1ebf0f3252528ed32ce
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 10:22:10 2012 -0300
+
+    global parameters in a struct
+
+commit 4ffde4f06f5ddc1fdff71798493d22af58696250
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 09:46:22 2012 -0300
+
+    don't need init_tps() declaration
+
+commit bd72e704b90a478bbba5e97e2489f82574ee503b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 09:42:51 2012 -0300
+
+    stencil creation in stencils.cpp/h
+
+commit fdc8f8edc8e78474e88e0cffbec2604a9648add6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 09:35:08 2012 -0300
+
+    forward declaration of rod::Matrix and rod::Vector
+
+commit 6269ba9742e65f9a5e1a6e03c8380670228812b9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 09:18:37 2012 -0300
+
+    put halfway image rendering in its own source file
+
+commit 44fc4a287d77af6d8036b3a16e200618b39331f9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 09:13:02 2012 -0300
+
+    upsample phase in is own source file
+
+commit aa5dbc9ffa6519ec0ca38b4976d6adffa7676187
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 09:09:49 2012 -0300
+
+    put pyramid-related stuff on pyramid.cpp/h
+
+commit 1ce8fb0639eff97dbcdba1229b5c7b0d2f440f31
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 8 01:41:08 2012 -0300
+
+    doesn't scale input images to 0-1.0 (use 0-255)
+
+commit 73894e0926041fdf939ccf217227d176b993bcbc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 23:53:47 2012 -0300
+
+    [initialize_level] correct bug in tps.b calculation
+
+commit 00cfb36f0b6bb89e62a46c0e4cd857bcded11f09
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 23:13:56 2012 -0300
+
+    added cuPrintf framework to gpumorph
+
+commit 6613ec2647bceeae2eb237b2d3428e91e0a642fc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 23:13:18 2012 -0300
+
+    rename USE_SM to CUDA_SM
+
+commit b455f911f4bf8a505a082b7090e950500e647f26
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 23:10:47 2012 -0300
+
+    exported build macros via config.h
+
+commit af37ae5cd853ff1dee4c29453a963ed0f798f8ab
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 23:09:05 2012 -0300
+
+    we can use printf inside kernels with cc<2.0
+
+commit d7f8d5c9f9fc46af38cc28b6daa414e6d7f6f5b9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 23:08:03 2012 -0300
+
+    added cuPrintf to libutil
+
+commit 34992586e25a066008b997a1b420e7d1b1c55bcf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 22:43:33 2012 -0300
+
+    optimizing one pixel from 5x5 block at a time
+
+commit a1549cc91abe4e4696d1988a900694b705b6c7c3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 19:19:34 2012 -0300
+
+    use float2 and int2 for some state variables
+
+commit 2a9964a40a552bf2085e07a904a5ca36904f8b29
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 14:01:58 2012 -0300
+
+    [optimize_level] show iteration count
+
+commit 352fbdbfaba765270db49e6212f54447622fe4e5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 12:09:54 2012 -0300
+
+    [optimize_level] fix compiler error on block improving
+
+commit fc5d879992d16cec775989263676bf0a84957f47
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 11:54:26 2012 -0300
+
+    [optimize_level] fix bounds boundary condition
+
+commit ed0076c651a3b8c2b64f2736897ed20fd4ede30f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 11:50:56 2012 -0300
+
+    [compute_gradient] fix
+
+commit 09c7604e91fb404342b3f88895da6d255647978e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 11:47:40 2012 -0300
+
+    [ssim_update] fix var1 updating
+
+commit 64bb9bf36bb1632b31a03ac39e1800ccd5b3d839
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 11:37:10 2012 -0300
+
+    [optimize_level] fix block not improving bailing out
+
+commit fedfe55f337810063a40e7027a052636c4cfa722
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 11:35:57 2012 -0300
+
+    [optimize_level] create KernPyramidLevel once per level
+
+commit 393248b380153ae86aa8c70733e277eb1cef09fc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 11:11:04 2012 -0300
+
+    forgot to initialize ui.axy/bx/by in KernPyramidLevel
+
+commit 3f3601721aef4caacfcc5cc977d77f6f8e0d3958
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 10:52:55 2012 -0300
+
+    corrected border indices generation
+
+commit 61a44a0579cb5d6de3b2b7f76f60b979b85a651f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 10:44:14 2012 -0300
+
+    downsample sampling works on (original) gamma space
+
+commit 5b6847528b42565b832bded39076df21ae1a7cc3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 10:42:53 2012 -0300
+
+    convert can do conversion without rescaling values
+
+commit 6d18d529d733f9707a68bdcac1330496758c2127
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 10:31:43 2012 -0300
+
+    dvecto's copy_from/to_host works with std::vector<bool>
+
+commit 270bfa83d093706980e1a4c0c4ae091d0426636e
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Oct 7 00:40:57 2012 -0300
+
+    copy_from_array functions
+
+commit 28074114b92775196d42a2d7cccab2eac651144b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:59:59 2012 -0300
+
+    fixed some level initialization bugs
+
+commit aac09f58d5ad76ec5c873ac39f5927271774c51c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:51:35 2012 -0300
+
+    init_tps() executed only once
+
+commit 644d33141b4ffcc57b9e54b4efc812886aaf706c
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:49:58 2012 -0300
+
+    upsample level works on vx,vy, not result_vector
+
+commit 23745796612197f9d55218199f1097bd1b87084d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:30:02 2012 -0300
+
+    got rid of 'm' parameter of upsample (multiply output by m)
+
+commit ad1cdc001fa7a815f653a3f869baf122754936d7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:28:23 2012 -0300
+
+    forgot to set output value in upsample kernel
+
+commit b69a072b8f766ef15b84663e91394167cefb0f5b
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:17:49 2012 -0300
+
+    move KernPyramidLevel and mem_index to beginning of file
+
+commit 1c4d191d54660b81d5514083f4379bf83f24ef79
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 17:11:44 2012 -0300
+
+    ajust downsampled level size to match Jing's
+
+commit 788e130953ead7a72cf793c74ee1a5f1ec65ef74
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 16:33:35 2012 -0300
+
+    rendering the result, vx,vy == 0 always!! ~2 FPS total
+
+commit 6636ed3fc204f296a56bfd7f1e4b1ff0a8daabe7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 16:14:28 2012 -0300
+
+    use gpu downscale on pyramid creation and added more timing code
+
+commit ab821f08d92f188a31ea2ae3ca23105a9229cd3f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 16:12:52 2012 -0300
+
+    downsample accept cudaArray inputs
+
+commit 566a7b423a7d1fc2668e2540f766566634a937fe
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:37:58 2012 -0300
+
+    PyramidLevel's img1,img2 -> img0,img1
+
+commit 08decc3343e46b32bd54a452b7aac469fa97c3db
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:29:38 2012 -0300
+
+    moved dimage's copy_to_array from filter_type.h to dimage.h
+
+commit 8bb583005db233f13b9e1b6f4e6beb512141b9b6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:25:16 2012 -0300
+
+    image downsample function
+
+commit 88aed4ee44b0049616e7e4a77ac04087e2bf0c3a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:24:27 2012 -0300
+
+    make use of CUDA_SM defined in config.h
+
+commit c541554cc58d80752110eddaf4e262e3dac44089
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:23:49 2012 -0300
+
+    added missing #include <string>
+
+commit c4d1a4c298ad621bb2bd1d89fb8f7238183725e6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:23:26 2012 -0300
+
+    export CUDA_SM to config.h
+
+commit 839573013812a4e14a1ab6104a0e4fe3fb1dcff4
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:22:17 2012 -0300
+
+    uchar3/float3 -> float4 and uchar4 -> float4 conv.
+
+commit dd6c7d0a77a08e602ebb08c01911022eb750902f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 15:21:37 2012 -0300
+
+    uchar3 -> float4 conversion
+
+commit 0370c98692a9faf55de841ccd08fb93232ad0d6f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 14:07:38 2012 -0300
+
+    put dimage forward decls in dimage_fwd.h
+
+commit 7a165ebca7127ed39662ce8df2e111c76e2f99fa
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sat Oct 6 13:55:41 2012 -0300
+
+    image_ops.cu split into several files
+
+commit 1b14b0c5a2901cc8bfd30e9b6d3e36ef6ac74971
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 22:47:59 2012 -0300
+
+    fix index calculation in PixelData
+
+commit 10a686f3e3b66b0fea16f20e2a34a08eb29df6ba
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 22:33:19 2012 -0300
+
+    level optimization compiles, but it's all bugs
+
+commit c9250f0005a8a7ac635acfb7795983526ccb8bcd
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 22:21:15 2012 -0300
+
+    added function calc_border, use in kern_init_level
+
+commit cc03b677473cff66050592afd796dc410a8ecf93
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 20:40:59 2012 -0300
+
+    don't need PyramidLevel::improving
+
+commit f3b23dd2733fd164f018f22d678ae24345f86fbf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 12:24:26 2012 -0300
+
+    mem_index receive a const-qualified pyramidlevel
+
+commit 5f0d049b5e6b78587eed15884e59e4d7d4cc445a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 12:00:11 2012 -0300
+
+    option to use saturate in ssim function
+
+commit 99a80c577777a6ed2f6feb550cb5017c37c60b48
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 11:57:32 2012 -0300
+
+    calculate correctly initial ssim parameters
+
+commit c998fe5dfeabdd8686668b60d130701b64a77ed7
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 11:30:18 2012 -0300
+
+    kern_init_level: rename parameter p to lvl
+
+commit b22ba416eea29350c7fa45fd8411213737ceddf3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 11:26:28 2012 -0300
+
+    create typedefs Mat3 and Mat5
+
+commit cbf88c1e57b750ab2f4f89d7fe0a8c16c5fe26b9
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 00:23:52 2012 -0300
+
+    KernInitLevelParams -> KernPyramidLevel
+
+commit 808945389a9580eef78d53d2b4ac737ec473dc9f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 00:15:51 2012 -0300
+
+    line length max = 78
+
+commit 3ca3f50797e67d21f9b68bbeabb46d54c485dd0f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 00:14:06 2012 -0300
+
+    add timing code for upsample
+
+commit ba541fe330034df5600d36d7d183caca4f094b47
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 00:12:09 2012 -0300
+
+    initialize_level "executes" with no failues, added timing code
+
+commit 8ac67d915ba742b0419804f5f460da2afd51e306
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Fri Oct 5 00:11:25 2012 -0300
+
+    __device__ operator[] for dvector_ptr
+
+commit 208ee347166203e5e3621099ab1ebeee9b67a981
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 23:34:14 2012 -0300
+
+    setup correct symbol for c_[xy]_offset
+
+commit fb53b8b3e0765d95d420249ed4f6b654b871b0ab
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 23:31:56 2012 -0300
+
+    set correct image size before calling luminance
+
+commit 43365b68e4735ba5be8cac9c1890fc6a3539354f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 23:29:08 2012 -0300
+
+    PyramidLevel is noncopyable, Pyramid manages pointers
+
+commit 2e2679d792303b70735b0225da604c70ad718543
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 23:20:12 2012 -0300
+
+    initialize image before passing to rod::luminance
+
+commit f05672d04db17a2ab192d16243b5a955f6759af3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 10:17:55 2012 -0300
+
+    added tps stencils calculation
+
+commit ac61d04ac85473be936dc8895b1834b26ed7bedc
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 10:15:55 2012 -0300
+
+    create and initialize cuda texture for img1 and img2
+
+commit cd53ac556e6ef08504c14c1eb48e6a9ba1ae3d9f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Thu Oct 4 10:10:59 2012 -0300
+
+    neighbor offsets initialization
+
+commit e46f614997f2b27c9e3e130543ab7f2ce8a16f79
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Wed Oct 3 00:24:09 2012 -0300
+
+    operator /= for matrices and scalar
+
+commit 39f60a8ef6950ae951fd4d95508f7c8ad38d1d17
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 2 23:45:37 2012 -0300
+
+    hadamard (elementwise) product for matrices
+
+commit 3fe0ca85678ff992d9587ae4e5f995c3b36b881d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 2 08:41:28 2012 -0300
+
+    pyr.img1/2 are cudaArrays, use luma images and got rid of masks
+
+commit ecfc79fc033adb2a2c959c23207dd3c998eb5642
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 2 08:40:43 2012 -0300
+
+    inclusion of *.png and libmorph.a in gitignore
+
+commit 1e89d27263c12ee82af7a8ed5d3ecfaddea5f414
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 2 08:40:02 2012 -0300
+
+    conversion between uchar1/2/4 to float3
+
+commit 4a357f26860a1689523e465def6b5034e2f2ed9d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Tue Oct 2 08:28:01 2012 -0300
+
+    got rid of result_*, except of result_vector, for now
+
+commit b145a53803f6ea5d29aa535e57aa15e0f42c79f6
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 11:11:25 2012 -0300
+
+    moved algorithm-related stuff to morph.cu/h
+
+commit 19b53046d361a9b6f207612e6296d9fd3205b642
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 11:11:00 2012 -0300
+
+    added missing #include
+
+commit 6f59f6947cefc212f1505ee5d1650f8bc53ece38
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 10:54:51 2012 -0300
+
+    result vector upscaling ok
+
+commit 8cd6600c42866ffa289fa5f6cd153901a701f706
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 10:54:05 2012 -0300
+
+    upsample can scale resulting pixel value
+
+commit 9ad189933624a25913436a617fa22d75beff66ba
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 10:25:45 2012 -0300
+
+    linear interpolator is default in upsample
+
+commit 92c42183a0f970e658fed50ffbf369a007db732f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 10:12:28 2012 -0300
+
+    upsample now works with cubic interpolators
+
+commit 04a84b536c4bbe13240a8bbdea47c3cdc79d5e1d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 10:06:51 2012 -0300
+
+    bspline3 in rod namespace
+
+commit a474ddcc15001f77185b8de64efb5c303f114c68
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 10:02:13 2012 -0300
+
+    upsample works
+
+commit 93031c3a4b2d2326b9b3b8ebc04ca5882784ea80
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 02:21:30 2012 -0300
+
+    dimage::copy_from_host rowstride parameter refers to input data
+
+commit a18bda182dfde74d190b01b50c323705115fe9e3
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 01:56:45 2012 -0300
+
+    fix conversion from float to uchar (now is 0->255, not 0->254)
+
+commit 049e499278a5e3bd0f46957f3468030df69537cb
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 01:56:17 2012 -0300
+
+    added conversion from uchar to uchar4
+
+commit 07934f251e2653b2c882f62cd7d95ad5d9e76faf
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 01:23:33 2012 -0300
+
+    dimage<float4> to dimage<uchar4> conversion
+
+commit de82733b181efd38ca02e1441c7c0916ad727a19
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 00:20:25 2012 -0300
+
+    folding on upsample functions
+
+commit 38e357d7b23f236156ecff8ff049a97168e0a990
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Mon Oct 1 00:04:27 2012 -0300
+
+    upsample function with several interpolators
+
+commit 6709f3481a4c9219c90ab4f1e1bf62977981cb8a
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 22:54:51 2012 -0300
+
+    don't need total_iter at the moment
+
+commit 864b9e1ae122b22ec9d7446da7ea43390661be74
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 22:50:59 2012 -0300
+
+    smallest level optimization OK (without ui though)
+
+commit 208dc9bde22ee81f008827e95b391ed6322a256d
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 22:50:27 2012 -0300
+
+    dvector::operator[] returns a const element
+
+commit 3e5b5f2229f27b1034ffbf496bec94dae05be0fe
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 22:49:25 2012 -0300
+
+    project uses opencv
+
+commit a05606b5fbb0a60cdc8a86b76adba948d0253161
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 19:51:29 2012 -0300
+
+    creation of pyramid ok
+
+commit fd2d7b2ad6ba7fd99200e92883fac200af09ad3f
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 19:50:50 2012 -0300
+
+    added new conversions between image types
+
+commit e850129a4af154641a9b0cca70972d3eb6139846
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 19:09:31 2012 -0300
+
+    added several cuda image utilities from cip project
+
+commit ff01e5fbdeb5c024817d712c3c846dfd7097e498
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 14:40:05 2012 -0300
+
+    add *.jpg to gitignore
+
+commit d36228fdd0190b5f32278f4d602cfda185a939e5
+Author: Rodolfo Schulz Lima <rodolfo@rodsoft.org>
+Date:   Sun Sep 30 14:10:48 2012 -0300
+
+    initial commit with project structure

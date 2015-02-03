@@ -1,0 +1,13 @@
+CMakeFiles
+Makefile
+cmake_install.cmake
+gpumorph
+pch.h.gch
+*.jpg
+*.png
+*.bmp
+libmorph.a
+config.h
+*.xml
+*.dat
+*.session

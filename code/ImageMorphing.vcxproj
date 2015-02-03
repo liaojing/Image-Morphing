@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{563091E6-BDE5-386A-BC9E-073821801E3E}</ProjectGuid>
+    <RootNamespace>ImageMorphing</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>ImageMorphing</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>ImageMorphing</PrimaryOutput>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+    <UseILP64Interfaces>true</UseILP64Interfaces>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>ImageMorphing</PrimaryOutput>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>ImageMorphing</PrimaryOutput>
+    <UseIntelMKL>Parallel</UseIntelMKL>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ImageMorphing</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ImageMorphing</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ImageMorphing</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ImageMorphing</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>D:\lib\Intel\Composer XE 2015\mkl\include;D:\lib\opencv3.0\build\include;D:\lib\OpenGL\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;E:\Image-Morphing\code\pyramids;E:\Image-Morphing\code\gpumorph\src;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\x64\vc12\lib;E:\Image-Morphing\code\pyramids\x64\Debug;E:\Image-Morphing\code\gpumorph\x64\Debug;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;$(LibraryPath)$(OmpLibDir)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\lib\Intel\Composer XE 2015\mkl\include;D:\lib\opencv3.0\build\include;D:\lib\OpenGL\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;E:\Image-Morphing\code\pyramids;E:\Image-Morphing\code\gpumorph\src;E:\Image-Morphing\code\gpumorph\lib;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\x64\vc12\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;E:\Image-Morphing\code\pyramids\x64\Debug;E:\Image-Morphing\code\gpumorph\src\Debug\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\lib\Intel\Composer XE 2015\mkl\include;D:\lib\opencv3.0\build\include;D:\lib\OpenGL\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;E:\Image-Morphing\code\pyramids;E:\Image-Morphing\code\gpumorph\src;E:\Image-Morphing\code\gpumorph\lib;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\x64\vc12\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;E:\Image-Morphing\code\pyramids\x64\Release;E:\Image-Morphing\code\gpumorph\src\Release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtOpenGL";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtWidgets";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtXml";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtGui";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtCore";"release";".";D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\mkspecs\win32-msvc2013;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\qtmain.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5OpenGL.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Widgets.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Xml.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Gui.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\ImageMorphing.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtOpenGL";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtWidgets";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtXml";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtGui";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtCore";"release";".";D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\mkspecs\win32-msvc2013;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>release\</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>
+      </ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\qtmain.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5OpenGL.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Widgets.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Xml.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Gui.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Core.lib;opencv_highgui300d.lib;opencv_imgproc300d.lib;opencv_core300d.lib;opencv_imgcodecs300d.lib;glew32.lib;morph.lib;resample.lib;util.lib;cudart.lib;pyramids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\ImageMorphing.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtOpenGL";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtWidgets";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtXml";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtGui";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtCore";"debug";".";D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\mkspecs\win32-msvc2013;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\qtmaind.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5OpenGLd.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Widgetsd.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Xmld.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Guid.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Cored.lib;opencv_highgui300d.lib;opencv_imgproc300d.lib;opencv_core300d.lib;opencv_imgcodecs300d.lib;glew32.lib;pyramids.lib;morph.lib;resample.lib;util.lib;cudart.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\ImageMorphing.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtOpenGL";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtWidgets";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtXml";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtGui";"D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\include\QtCore";"debug";".";D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\mkspecs\win32-msvc2013;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>debug\</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <OpenMPSupport>true</OpenMPSupport>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\qtmaind.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5OpenGLd.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Widgetsd.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Xmld.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Guid.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Cored.lib;opencv_highgui300d.lib;opencv_imgproc300d.lib;opencv_core300d.lib;opencv_imgcodecs300d.lib;glew32.lib;morph.lib;resample.lib;util.lib;cudart.lib;pyramids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\ImageMorphing.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_OPENGL_LIB;QT_WIDGETS_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="IntelligentScissor\CostGraph.cpp" />
+    <ClCompile Include="IntelligentScissor\CostNode.cpp" />
+    <ClCompile Include="UI\CtrBar.cpp" />
+    <ClCompile Include="UI\DlgPara.cpp" />
+    <ClCompile Include="UI\ExternalThread.cpp" />
+    <ClCompile Include="UI\HalfwayImage.cpp" />
+    <ClCompile Include="UI\ImageEditor.cpp" />
+    <ClCompile Include="Algorithm\MatchingThread.cpp" />
+    <ClCompile Include="Algorithm\MatchingThread_GPU.cpp" />
+    <ClCompile Include="UI\MdiEditor.cpp" />
+    <ClCompile Include="Algorithm\PoissonExt.cpp" />
+    <ClCompile Include="Algorithm\Pyramid.cpp" />
+    <ClCompile Include="Algorithm\QuadraticPath.cpp" />
+    <ClCompile Include="UI\RenderWidget.cpp" />
+    <ClCompile Include="IntelligentScissor\fibheap.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IntelligentScissor\CostGraph.h" />
+    <ClInclude Include="IntelligentScissor\CostNode.h" />
+    <CustomBuild Include="UI\CtrBar.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\CtrBar.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\CtrBar.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\CtrBar.h -o release\moc_CtrBar.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\CtrBar.h -o release\moc_CtrBar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC UI\CtrBar.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC UI\CtrBar.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_CtrBar.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_CtrBar.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\CtrBar.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\CtrBar.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\CtrBar.h -o debug\moc_CtrBar.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\CtrBar.h -o debug\moc_CtrBar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC UI\CtrBar.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC UI\CtrBar.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_CtrBar.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_CtrBar.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="UI\DlgPara.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\DlgPara.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\DlgPara.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\DlgPara.h -o release\moc_DlgPara.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\DlgPara.h -o release\moc_DlgPara.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC UI\DlgPara.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC UI\DlgPara.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_DlgPara.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_DlgPara.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\DlgPara.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\DlgPara.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\DlgPara.h -o debug\moc_DlgPara.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\DlgPara.h -o debug\moc_DlgPara.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC UI\DlgPara.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC UI\DlgPara.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_DlgPara.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_DlgPara.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="UI\ExternalThread.h" />
+    <CustomBuild Include="UI\HalfwayImage.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\HalfwayImage.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\HalfwayImage.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\HalfwayImage.h -o release\moc_HalfwayImage.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\HalfwayImage.h -o release\moc_HalfwayImage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC UI\HalfwayImage.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC UI\HalfwayImage.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_HalfwayImage.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_HalfwayImage.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\HalfwayImage.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\HalfwayImage.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\HalfwayImage.h -o debug\moc_HalfwayImage.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\HalfwayImage.h -o debug\moc_HalfwayImage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC UI\HalfwayImage.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC UI\HalfwayImage.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_HalfwayImage.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_HalfwayImage.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="Header.h" />
+    <CustomBuild Include="UI\ImageEditor.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\ImageEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\ImageEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\ImageEditor.h -o release\moc_ImageEditor.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\ImageEditor.h -o release\moc_ImageEditor.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC UI\ImageEditor.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC UI\ImageEditor.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_ImageEditor.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_ImageEditor.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\ImageEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\ImageEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\ImageEditor.h -o debug\moc_ImageEditor.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\ImageEditor.h -o debug\moc_ImageEditor.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC UI\ImageEditor.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC UI\ImageEditor.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_ImageEditor.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_ImageEditor.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Algorithm\MatchingThread.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Algorithm\MatchingThread.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Algorithm\MatchingThread.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread.h -o release\moc_MatchingThread.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread.h -o release\moc_MatchingThread.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC Algorithm\MatchingThread.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Algorithm\MatchingThread.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_MatchingThread.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_MatchingThread.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Algorithm\MatchingThread.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Algorithm\MatchingThread.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread.h -o debug\moc_MatchingThread.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread.h -o debug\moc_MatchingThread.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC Algorithm\MatchingThread.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Algorithm\MatchingThread.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_MatchingThread.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_MatchingThread.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Algorithm\MatchingThread_GPU.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Algorithm\MatchingThread_GPU.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Algorithm\MatchingThread_GPU.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread_GPU.h -o release\moc_MatchingThread_GPU.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread_GPU.h -o release\moc_MatchingThread_GPU.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC Algorithm\MatchingThread_GPU.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Algorithm\MatchingThread_GPU.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_MatchingThread_GPU.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_MatchingThread_GPU.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Algorithm\MatchingThread_GPU.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Algorithm\MatchingThread_GPU.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread_GPU.h -o debug\moc_MatchingThread_GPU.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\MatchingThread_GPU.h -o debug\moc_MatchingThread_GPU.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC Algorithm\MatchingThread_GPU.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Algorithm\MatchingThread_GPU.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_MatchingThread_GPU.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_MatchingThread_GPU.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="UI\MdiEditor.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\MdiEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\MdiEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\MdiEditor.h -o release\moc_MdiEditor.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\MdiEditor.h -o release\moc_MdiEditor.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC UI\MdiEditor.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC UI\MdiEditor.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_MdiEditor.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_MdiEditor.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\MdiEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\MdiEditor.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\MdiEditor.h -o debug\moc_MdiEditor.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\MdiEditor.h -o debug\moc_MdiEditor.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC UI\MdiEditor.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC UI\MdiEditor.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_MdiEditor.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_MdiEditor.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="Algorithm\PoissonExt.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Algorithm\PoissonExt.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Algorithm\PoissonExt.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\PoissonExt.h -o release\moc_PoissonExt.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\PoissonExt.h -o release\moc_PoissonExt.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC Algorithm\PoissonExt.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Algorithm\PoissonExt.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_PoissonExt.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_PoissonExt.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Algorithm\PoissonExt.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Algorithm\PoissonExt.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\PoissonExt.h -o debug\moc_PoissonExt.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\PoissonExt.h -o debug\moc_PoissonExt.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC Algorithm\PoissonExt.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Algorithm\PoissonExt.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_PoissonExt.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_PoissonExt.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="Algorithm\Pyramid.h" />
+    <CustomBuild Include="Algorithm\QuadraticPath.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Algorithm\QuadraticPath.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Algorithm\QuadraticPath.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\QuadraticPath.h -o release\moc_QuadraticPath.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\QuadraticPath.h -o release\moc_QuadraticPath.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC Algorithm\QuadraticPath.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC Algorithm\QuadraticPath.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_QuadraticPath.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_QuadraticPath.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Algorithm\QuadraticPath.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Algorithm\QuadraticPath.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\QuadraticPath.h -o debug\moc_QuadraticPath.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore Algorithm\QuadraticPath.h -o debug\moc_QuadraticPath.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC Algorithm\QuadraticPath.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC Algorithm\QuadraticPath.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_QuadraticPath.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_QuadraticPath.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="UI\RenderWidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\RenderWidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\RenderWidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\RenderWidget.h -o release\moc_RenderWidget.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\RenderWidget.h -o release\moc_RenderWidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC UI\RenderWidget.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MOC UI\RenderWidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\moc_RenderWidget.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\moc_RenderWidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\RenderWidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\RenderWidget.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\RenderWidget.h -o debug\moc_RenderWidget.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\moc.exe  -DUNICODE -DWIN32 -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_XML_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_MSC_VER=1800 -D_WIN32 -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/mkspecs/win32-msvc2013 -IE:/Image-Morphing/code -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtOpenGL -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtWidgets -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtXml -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtGui -ID:/lib/Qt5.3.2/5.3/msvc2013_64_opengl/include/QtCore UI\RenderWidget.h -o debug\moc_RenderWidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC UI\RenderWidget.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MOC UI\RenderWidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\moc_RenderWidget.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\moc_RenderWidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="IntelligentScissor\fibheap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="debug\moc_CtrBar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_CtrBar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_DlgPara.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_DlgPara.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_HalfwayImage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_HalfwayImage.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_ImageEditor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_ImageEditor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_MatchingThread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_MatchingThread.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_MatchingThread_GPU.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_MatchingThread_GPU.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_MdiEditor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_MdiEditor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_PoissonExt.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_PoissonExt.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_QuadraticPath.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_QuadraticPath.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\moc_RenderWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\moc_RenderWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="debug\qrc_CtrBar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="release\qrc_CtrBar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClInclude Include="ui_CtrBar.h" />
+    <ClInclude Include="ui_DlgPara.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="UI\CtrBar.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\CtrBar.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\CtrBar.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\CtrBar.ui -o ui_CtrBar.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\CtrBar.ui -o ui_CtrBar.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC UI\CtrBar.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC UI\CtrBar.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_CtrBar.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_CtrBar.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\CtrBar.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\CtrBar.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\CtrBar.ui -o ui_CtrBar.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\CtrBar.ui -o ui_CtrBar.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC UI\CtrBar.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC UI\CtrBar.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_CtrBar.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_CtrBar.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="UI\DlgPara.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\DlgPara.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\DlgPara.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\DlgPara.ui -o ui_DlgPara.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\DlgPara.ui -o ui_DlgPara.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC UI\DlgPara.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UIC UI\DlgPara.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui_DlgPara.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">ui_DlgPara.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\DlgPara.ui;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\DlgPara.ui;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\DlgPara.ui -o ui_DlgPara.h</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\uic.exe UI\DlgPara.ui -o ui_DlgPara.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC UI\DlgPara.ui</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UIC UI\DlgPara.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui_DlgPara.h;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">ui_DlgPara.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="UI\CtrBar.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UI\CtrBar.qrc;UI\icon\stop.png;UI\icon\play.png;UI\icon\record.png;UI\icon\pause.png;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">UI\CtrBar.qrc;UI\icon\stop.png;UI\icon\play.png;UI\icon\record.png;UI\icon\pause.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\rcc.exe -name CtrBar UI\CtrBar.qrc -o release\qrc_CtrBar.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\rcc.exe -name CtrBar UI\CtrBar.qrc -o release\qrc_CtrBar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RCC UI\CtrBar.qrc</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">RCC UI\CtrBar.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\qrc_CtrBar.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">release\qrc_CtrBar.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UI\CtrBar.qrc;UI\icon\stop.png;UI\icon\play.png;UI\icon\record.png;UI\icon\pause.png;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">UI\CtrBar.qrc;UI\icon\stop.png;UI\icon\play.png;UI\icon\record.png;UI\icon\pause.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\rcc.exe -name CtrBar UI\CtrBar.qrc -o debug\qrc_CtrBar.cpp</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\bin\rcc.exe -name CtrBar UI\CtrBar.qrc -o debug\qrc_CtrBar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCC UI\CtrBar.qrc</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">RCC UI\CtrBar.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">debug\qrc_CtrBar.cpp;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">debug\qrc_CtrBar.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CudaCompile Include="CUDA\cg.cu">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </CudaCompile>
+    <None Include="CUDA\cg.cuh" />
+    <None Include="UI\icon\pause.png" />
+    <None Include="UI\icon\play.png" />
+    <None Include="UI\icon\record.png" />
+    <None Include="UI\icon\stop.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.targets" />
+  </ImportGroup>
+</Project>

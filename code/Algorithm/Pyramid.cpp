@@ -19,11 +19,12 @@ CPyramids::~CPyramids(void)
 	
 }
 
-void  CPyramids::build_pyramid(cv::Mat &image1, cv::Mat &image2,Parameters& para, int n,int order)
+void  CPyramids::build_pyramid(cv::Mat &image1, cv::Mat &image2,Parameters& para, int n,int order, bool gpu_flag)
 {
 	if (_gpu)
 	delete _gpu;
 
+	if (gpu_flag)
 	_gpu=new Morph(para);
 	
 

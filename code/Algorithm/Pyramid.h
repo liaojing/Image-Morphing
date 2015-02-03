@@ -32,7 +32,7 @@ public:
 	Morph *_gpu;
 	CPyramids(void);
 	~CPyramids(void);
-	void build_pyramid(cv::Mat &image1, cv::Mat &image2,Parameters& para, int n,int order);
+	void build_pyramid(cv::Mat &image1, cv::Mat &image2, Parameters& para, int n, int order,bool gpu_flag);
 	void build_pyramid(cv::Mat& mask1, cv::Mat& mask2);
 
 };

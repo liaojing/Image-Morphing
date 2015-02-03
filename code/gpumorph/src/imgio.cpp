@@ -43,7 +43,7 @@ void load(rod::dimage<T> &dimg, const std::string &fname)
     case 3:
         {
             cv::Mat temp;
-            cvtColor((cv::Mat)img.Ipl(), temp, cv::COLOR_RGB2RGBA);
+			cvtColor(cv::cvarrToMat(img.Ipl()), temp, cv::COLOR_RGB2RGBA);
             IplImage temp2 = temp;
 
             cv::WImageViewC<unsigned char,4> temp3(&temp2);
@@ -97,7 +97,7 @@ void save(const std::string &fname, const rod::dimage<float4> &img)
     cv::WImageViewC<unsigned char,4> temp((unsigned char *)&cpu[0],
                                           img.width(),img.height());
 
-    cv::imwrite(fname, (cv::Mat)temp.Ipl());
+	cv::imwrite(fname, cv::cvarrToMat(temp.Ipl()));
 }
 
 template<>
@@ -108,7 +108,7 @@ void save(const std::string &fname, const rod::dimage<unsigned char> &img)
 
     cv::WImageViewC<unsigned char,1> temp((unsigned char *)&cpu[0],
                                           img.width(),img.height());
-    cv::imwrite(fname, (cv::Mat)temp.Ipl());
+	cv::imwrite(fname, cv::cvarrToMat(temp.Ipl()));
 }
 
 template<>
@@ -125,7 +125,7 @@ void save(const std::string &fname, const rod::dimage<float3> &img)
 
     cv::Mat temp2;
 
-    cvtColor((cv::Mat)temp.Ipl(), temp2, cv::COLOR_RGBA2RGB);
+	cvtColor(cv::cvarrToMat(temp.Ipl()), temp2, cv::COLOR_RGBA2RGB);
 
     imwrite(fname, temp2);
 }
@@ -141,7 +141,7 @@ void save(const std::string &fname, const rod::dimage<uchar3> &img)
 
     cv::Mat temp2;
 
-    cvtColor((cv::Mat)temp.Ipl(), temp2, cv::COLOR_RGBA2RGB);
+	cvtColor(cv::cvarrToMat(temp.Ipl()), temp2, cv::COLOR_RGBA2RGB);
 
     imwrite(fname, temp2);
 }
@@ -158,5 +158,5 @@ void save(const std::string &fname, const rod::dimage<float> &img)
 
     cv::WImageViewC<unsigned char,1> temp((unsigned char *)&cpu[0],
                                           img.width(),img.height(),img.width());
-    imwrite(fname, (cv::Mat)temp.Ipl());
+	imwrite(fname, cv::cvarrToMat(temp.Ipl()));
 }

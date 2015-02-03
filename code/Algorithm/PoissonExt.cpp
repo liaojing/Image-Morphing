@@ -62,14 +62,14 @@ void CPoissonExt::run()
 
 	int size;
 	size=prepare(1,_extends1);
-	if(_gpu_flag)
+	/*if(_gpu_flag)
 		poissonExtend_cuda(_extends1,size);
-	else
+	else*/
 		poissonExtend(_extends1,size);
 	size=prepare(2,_extends2);
-   	if(_gpu_flag)
+   /*	if(_gpu_flag)
    		poissonExtend_cuda(_extends2,size);
-   	else
+   	else*/
 		poissonExtend(_extends2,size);
 
 	finish=clock();

@@ -19,8 +19,8 @@ public:
     Morph(const Parameters &params);
     ~Morph();
 
-	
-	Parameters &params();
+	const Parameters &params() const { return m_params; };
+	Parameters &params() { return m_params; };
 
     const rod::dimage<float3> &image0() const { return m_dimg0; }
     const rod::dimage<float3> &image1() const { return m_dimg1; }

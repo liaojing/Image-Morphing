@@ -1,3 +1,5 @@
+#include "GL\glew.h"
+#include "GL\glut.h"
 #include "RenderWidget.h"
 #include "ExternalThread.h"
 
@@ -104,39 +106,6 @@ void RenderWidget::set(QString pro_path, CPyramids* pyramids,int first,int last,
 	_pro_path=pro_path;
 	_parameters=parameters;
 
-	cv::Mat mesh1=Mat(h+ex*2,w+ex*2,CV_8UC3,Scalar(255,255,255));
-	cv::Mat mesh2=Mat(h+ex*2,w+ex*2,CV_8UC3,Scalar(255,255,255));
-	cv::Mat image1=imread("d:\\image1.png");
-	cv::Mat image2=imread("d:\\image2.png");
-
-#pragma omp parallel for
-	for(int y=0;y<h;y++)
-		for(int x=0;x<w;x++)
-		{
-			mesh1.at<Vec3b>(y+ex,x+ex)=mesh1.at<Vec3b>(y+ex,x+ex)*0.5+image1.at<Vec3b>(y,x)*0.5;
-			mesh2.at<Vec3b>(y+ex,x+ex)=mesh2.at<Vec3b>(y+ex,x+ex)*0.5+image2.at<Vec3b>(y,x)*0.5;
-		}
-
-	for(int y=0;y<=h;y+=20)
-		for(int x=0;x<=w-20;x+=20)
-		{
-			if(y==h) y=h-1;
-			Vec3f v1=pyramids[0]._vector.at<Vec3f>(y,x);
-			Vec3f v2=pyramids[0]._vector.at<Vec3f>(y,MIN(x+20,w-1));
-			line(mesh1,Point(x+ex-v1[0],y+ex-v1[1]),Point(MIN(x+20,w-1)+ex-v2[0],y+ex-v2[1]),Scalar(0,0,0),2);
-			line(mesh2,Point(x+ex+v1[0],y+ex+v1[1]),Point(MIN(x+20,w-1)+ex+v2[0],y+ex+v2[1]),Scalar(0,0,0),2);
-		}	
-		for(int x=0;x<=w;x+=20)
-			for(int y=0;y<=h-20;y+=20)
-			{
-				if(x==w) x=w-1;
-				Vec3f v1=pyramids[0]._vector.at<Vec3f>(y,x);
-				Vec3f v2=pyramids[0]._vector.at<Vec3f>(MIN(y+20,h-1),x);
-				line(mesh1,Point(x+ex-v1[0],y+ex-v1[1]),Point(x+ex-v2[0],MIN(y+20,h-1)+ex-v2[1]),Scalar(0,0,0),2);
-				line(mesh2,Point(x+ex+v1[0],y+ex+v1[1]),Point(x+ex+v2[0],MIN(y+20,h-1)+ex+v2[1]),Scalar(0,0,0),2);
-			}	
-		imwrite("d:\\mesh1.png",mesh1);
-		imwrite("d:\\mesh2.png",mesh2);
 
 }
 
@@ -221,7 +190,7 @@ void RenderWidget::setShaders()
 	free(fs);
 	//glCompileShaderARB(v);
 	glCompileShaderARB(f);
-	GLint isCompiled = 0;
+	/*GLint isCompiled = 0;
 	glGetShaderiv(f, GL_COMPILE_STATUS, &isCompiled);
 	if(isCompiled == GL_FALSE)
 	{
@@ -251,7 +220,7 @@ void RenderWidget::setShaders()
 		delete[] infoLog;
 		//In this simple program, we'll just leave
 		return;
-	}
+	}*/
 	p = glCreateProgramObjectARB();
 	//glAttachObjectARB(p,v);
 	glAttachObjectARB(p,f);
@@ -348,13 +317,13 @@ void RenderWidget::paintGL()
 		{
 			if(_flag[i])
 			{
-				glActiveTexture(GL_TEXTURE0);
+				glActiveTextureARB(GL_TEXTURE0);
 				glBindTexture(GL_TEXTURE_2D,tex_vector[_index[i]]);
-				glActiveTexture(GL_TEXTURE1);
+				glActiveTextureARB(GL_TEXTURE1);
 				glBindTexture(GL_TEXTURE_2D,tex_quadratic[_index[i]]);
-				glActiveTexture(GL_TEXTURE2);
+				glActiveTextureARB(GL_TEXTURE2);
 				glBindTexture(GL_TEXTURE_2D,tex1[_index[i]]);
-				glActiveTexture(GL_TEXTURE3);
+				glActiveTextureARB(GL_TEXTURE3);
 				glBindTexture(GL_TEXTURE_2D,tex2[_index[i]]);
 
 				glBegin(GL_QUADS);
@@ -436,7 +405,12 @@ void RenderWidget::paintGL()
 					out<<line;
 					//del
  					line.sprintf("del %s\\frame???.png\n",_pro_path.toLatin1().data());
- 					out<<line;			
+ 					out<<line;	
+
+					//del
+					line.sprintf("del video.bat\n");
+					out << line;
+
 				}
 				file.flush(); 
 				file.close(); 
@@ -461,7 +435,7 @@ void RenderWidget::paintGL()
 		glDisable(GL_TEXTURE_2D);
 		glLoadIdentity();
 
-		glActiveTexture(GL_TEXTURE0);
+		glActiveTextureARB(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, tex_fbo);
 
 		float ratio_w=this->size().width()/(float)w;

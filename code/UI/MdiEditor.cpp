@@ -26,7 +26,8 @@ MdiEditor::MdiEditor(QApplication* app,QWidget *parent)
 	createDockWidget();
 	createMenuBar();
 	createStatusBar();
-	gpu_flag=FALSE;//CudaInit();
+	gpu_flag=FALSE;
+	gpu_cap=CudaInit();
 
 	connect(imageEditorL,SIGNAL(sigUpdate()),this,SLOT(updateALL()));
 	connect(imageEditorR,SIGNAL(sigUpdate()),this,SLOT(updateALL()));
@@ -63,7 +64,7 @@ bool MdiEditor::CudaInit()
 		struct cudaDeviceProp device_prop;
 		if(cudaGetDeviceProperties(&device_prop,i)==cudaSuccess)
 		{
-			if(device_prop.major>=2)
+			if(device_prop.major>=3)
 			{
 				if(cudaSetDevice(i)==cudaSuccess)
 						return true;
@@ -76,6 +77,9 @@ bool MdiEditor::CudaInit()
 
 void MdiEditor::DeleteThread(int i)
 {
+	if (i<0 || i>layer_num)
+		return;
+
 	if (match_thread[i])
 	{
 		disconnect(match_thread[i],0,0,0);
@@ -283,14 +287,35 @@ void MdiEditor::paintEvent(QPaintEvent *event)
 
 	if(gpu_flag)
 	{
+		
 		gpu_alg->setChecked(true);
 		cpu_alg->setChecked(false);
+		mod_mask->setEnabled(false);
+		mod_layer->setEnabled(false);
+
 	}
 	else
 	{
 		gpu_alg->setChecked(false);
 		cpu_alg->setChecked(true);
+		mod_mask->setEnabled(true);
+		mod_layer->setEnabled(true);
 	}
+
+	if (thread_flag[layer_index] < 4 && thread_flag[layer_index]>1)
+	{
+		gpu_alg->setEnabled(false);
+		cpu_alg->setEnabled(false);
+	}
+	else
+	{
+		
+		gpu_alg->setEnabled(true);
+		cpu_alg->setEnabled(true);
+	}
+
+	if (!gpu_cap)
+		gpu_alg->setEnabled(false);
 }
 
 MdiEditor::~MdiEditor()
@@ -484,19 +509,14 @@ MdiEditor::~MdiEditor()
 	  	pro_path = QFileDialog::getExistingDirectory (this);
   	if(!pro_path.isNull())
   	{
-#ifdef _WIN32
+
   		if(!ReadXmlFile(pro_path+"\\settings.xml"))//exist
-#else
-  		if(!ReadXmlFile(pro_path+"/settings.xml"))//exist
-#endif
+
   		{
-#ifdef _WIN32
+
   			QFile::remove(pro_path+"\\result.html");
   			QFile::copy("template.html",pro_path+"\\result.html");
-#else
-  			QFile::remove(pro_path+"/result.html");
-  			QFile::copy("template.html",pro_path+"/result.html");
-#endif
+
 
   			//load two images
   			QString ImagePathName = QFileDialog::getOpenFileName(
@@ -540,7 +560,7 @@ MdiEditor::~MdiEditor()
 		for(int i=0;i<layer_num;i++)
 		{
 			int n=log((float)MIN(image1.cols,image1.rows))/log(2.0f)-log((float)parameters[i].start_res)/log(2.0f)+1;
-  			pyramids[i].build_pyramid(image1,image2,parameters[i],n,i);
+  			pyramids[i].build_pyramid(image1,image2,parameters[i],n,i,gpu_cap);
 		}
 		thread_start(layer_index);
 
@@ -551,11 +571,9 @@ MdiEditor::~MdiEditor()
 
  void MdiEditor::SaveProject()
  {
-#ifdef _WIN32
+
   	WriteXmlFile(pro_path+"\\settings.xml");
-#else
-  	WriteXmlFile(pro_path+"/settings.xml");
-#endif
+
 
  }
 
@@ -725,29 +743,22 @@ MdiEditor::~MdiEditor()
    		root.appendChild(eimages);
 
    		attribute=doc.createAttribute("image1");
-#ifdef _WIN32
-  		attribute.setValue("\\image1.png");
-#else
   		attribute.setValue("/image1.png");
-#endif
+
   		eimages.setAttributeNode(attribute);
 		QString filename;
 		filename.sprintf("%s/image1.png",pro_path.toLatin1().data());
 		cv::imwrite(filename.toLatin1().data(),image1);
 
   		attribute=doc.createAttribute("image2");
-#ifdef _WIN32
+
   		attribute.setValue("\\image2.png");
-#else
-  		attribute.setValue("/image2.png");
-#endif
+
 
   		eimages.setAttributeNode(attribute);
-#ifdef _WIN32
+
 		filename.sprintf("%s\\image2.png",pro_path.toLatin1().data());
-#else
-		filename.sprintf("%s/image2.png",pro_path.toLatin1().data());
-#endif
+
 		cv::imwrite(filename.toLatin1().data(),image2);
 
    		//layer
@@ -765,11 +776,9 @@ MdiEditor::~MdiEditor()
 
 			QDir dir;
 			QString filename;
-#ifdef _WIN32
+
 			filename.sprintf("%s\\%d",pro_path.toLatin1().data(),index);
-#else
-			filename.sprintf("%s/%d",pro_path.toLatin1().data(),index);
-#endif
+
 			dir.mkdir(filename);
 
 			//masks
@@ -777,31 +786,23 @@ MdiEditor::~MdiEditor()
  			elayer.appendChild(emask);
 
  			attribute=doc.createAttribute("mask1");
-#ifdef _WIN32
+
  			attribute.setValue(str.sprintf("\\%d\\mask1.png",index));
-#else
- 			attribute.setValue(str.sprintf("/%d/mask1.png",index));
-#endif
+
  			emask.setAttributeNode(attribute);
-#ifdef _WIN32
+
 			filename.sprintf("%s\\%d\\mask1.png",pro_path.toLatin1().data(),index);
-#else
-			filename.sprintf("%s/%d/mask1.png",pro_path.toLatin1().data(),index);
-#endif
+
 			cv::imwrite(filename.toLatin1().data(),parameters[index].mask1);
 
  			attribute=doc.createAttribute("mask2");
-#ifdef _WIN32
+
  			attribute.setValue(str.sprintf("\\%d\\mask2.png",index));
-#else
- 			attribute.setValue(str.sprintf("/%d/mask2.png",index));
-#endif
+
  			emask.setAttributeNode(attribute);
-#ifdef _WIN32
+
 			filename.sprintf("%s\\%d\\mask2.png",pro_path.toLatin1().data(),index);
-#else
-			filename.sprintf("%s/%d/mask2.png",pro_path.toLatin1().data(),index);
-#endif
+
 			cv::imwrite(filename.toLatin1().data(),parameters[index].mask2);
 
 
@@ -928,11 +929,9 @@ MdiEditor::~MdiEditor()
 	 {
 		 imageEditorM->setImage(pyramids,index,index);
 		 QString path;
-#ifdef _WIN32
+
 		 path.sprintf("%s\\%d",pro_path.toLatin1().data(),index);
-#else
-		 path.sprintf("%s/%d",pro_path.toLatin1().data(),index);
-#endif
+
 		 imageEditorA->set(path,pyramids,index,index,&parameters[index]);
 
 		 if (thread_flag[index]==0)
@@ -1148,6 +1147,7 @@ void MdiEditor::poisson_finished(int index)
 
  void MdiEditor::Confirm()
  {
+	 DeleteThread(layer_index);
 	 switch(mod)
 	 {
 	 case 2:
@@ -1198,7 +1198,7 @@ void MdiEditor::poisson_finished(int index)
 		 break;
 
 	 case 3:
-
+		 parameters[layer_num] = parameters[layer_index];
 		 if(imageEditorL->_contourList.size()>0||imageEditorR->_contourList.size()>0)
 		 {
 			 Point polygonlist[5][200];
@@ -1247,7 +1247,7 @@ void MdiEditor::poisson_finished(int index)
 			 pyramids[layer_index].build_pyramid(parameters[layer_index].mask1,parameters[layer_index].mask2);
 			 thread_start(layer_index);
 			 int n=log((float)MIN(image1.cols,image1.rows))/log(2.0f)-log((float)parameters[layer_num].start_res)/log(2.0f)+1;
-			 pyramids[layer_num].build_pyramid(image1,image2,parameters[layer_num],n,layer_num);
+			 pyramids[layer_num].build_pyramid(image1, image2, parameters[layer_num], n, layer_num, gpu_cap);
 
 			 QString item;
 			 item.sprintf("&layer %d",layer_num);
@@ -1436,14 +1436,16 @@ void MdiEditor::poisson_finished(int index)
  {
 	 if (!gpu_flag)
 	 {
-		 for(int i=0;i<layer_num;i++)
-		 {
-			 DeleteThread(i);
-			 thread_flag[i]=0;
-		 }
-		  gpu_flag=true;
-		thread_start(layer_index);
-		update();
+	
+			 for (int i = 0; i<layer_num; i++)
+			 {
+				 DeleteThread(i);
+				 thread_flag[i] = 0;
+			 }
+			 gpu_flag = true;
+
+			thread_start(layer_index);
+			 update();	 
 
 	 }
  }
@@ -1454,11 +1456,9 @@ void MdiEditor::poisson_finished(int index)
 	 if(_auto)
 	 {
 		QString filename;
-#ifdef _WIN32
+
 		filename.sprintf("%s\\time.txt",pro_path.toLatin1().data());
-#else
-		filename.sprintf("%s/time.txt",pro_path.toLatin1().data());
-#endif
+
 		QFile file(filename.toLatin1().data());
 
 		if (file.open(QFile::WriteOnly | QFile::Truncate))

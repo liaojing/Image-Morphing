@@ -11,9 +11,9 @@ void CQuadraticPath::run()
 {
 	 clock_t start, finish;
 	 start=clock();
-	 if(_gpu_flag)
+	/* if(_gpu_flag)
 		 run_cuda();
-	 else
+	 else*/
 	     run_cpu();
 	finish=clock();
 	_runtime= (float)(finish - start)* 1000/ CLOCKS_PER_SEC; 

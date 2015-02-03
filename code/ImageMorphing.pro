@@ -14,13 +14,7 @@ HEADERS       = Header.h \
 		Algorithm/PoissonExt.h \       		
 		IntelligentScissor/fibheap.h \
 		IntelligentScissor/CostGraph.h \
-		IntelligentScissor/CostNode.h \
-		gpumorph\src\imgio.h\
-		gpumorph\src\pyramid.h\
-		gpumorph\src\morph.h\
-		gpumorph\src\stencil.h\
-		CUDA/cg.cuh
-	
+		IntelligentScissor/CostNode.h
 		
 SOURCES       =  main.cpp \
 		UI/MdiEditor.cpp \               
@@ -38,14 +32,6 @@ SOURCES       =  main.cpp \
 		IntelligentScissor/fibheap.cpp \
 		IntelligentScissor/CostGraph.cpp \
 		IntelligentScissor/CostNode.cpp
-		gpumorph/src/cpuoptim.cpp \
-		gpumorph/src/downsample.cpp \
-		gpumorph/src/imgio.cpp \
-		gpumorph/src/morph.cu\
-		gpumorph/src/render.cu\
-		gpumorph/src/stencil.cpp \
-		gpumorph/src/upsample.cu \
-		CUDA/cg.cu
 
 FORMS		  = UI/DlgPara.ui \
 		    UI/CtrBar.ui
@@ -54,18 +40,3 @@ RESOURCES      =  UI/CtrBar.qrc
 QT += xml
 QT += opengl
 CONFIG += 64bit
-unix:INCLUDEPATH += /usr/local/cuda/include
-unix:INCLUDEPATH += gpumorph/include
-unix:INCLUDEPATH += /opt/intel/mkl/include
-unix:INCLUDEPATH += pyramids/include
-unix:LIBS += -lopencv_core -lopencv_highgui -lopencv_imgproc -fopenmp -lGLEW -lGLU -L/opt/intel/lib/intel64 -liomp5 -L/opt/intel/composerxe/mkl/lib/intel64 -lmkl_core -lmkl_blacs_intelmpi_lp64 -lmkl_scalapack_lp64 -lmkl_def -lmkl_intel_thread -lmkl_intel_lp64 -lmpi -llapack -lglut -L/usr/local/cuda/lib64 -lcudart ../pyramids/libpyramid.a -L../gpumorph/src -lmorph -L../gpumorph/lib/util -lutil -LCUDA -lcg -L../gpumorph/lib/resample -lresample
-unix:QMAKE_CXXFLAGS += -fopenmp
-
-CONFIG(32bit) {
-    TARGET = 32bit_binary
-    QMAKE_CXXFLAGS += -m32
-    LIBS += -L<path to 32bit libraries>
-}
-CONFIG(64bit) {
-    TARGET = 64bit_binary
-}

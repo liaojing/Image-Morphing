@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cassert>
 #include <stdexcept>
-#include <cmath>
-
+#include <math.h>
+#include <algorithm>
 #if HAS_GSL
 #   include <complex>
 #   include <gsl/gsl_poly.h>
