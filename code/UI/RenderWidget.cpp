@@ -408,7 +408,7 @@ void RenderWidget::paintGL()
  					out<<line;	
 
 					//del
-					line.sprintf("del video.bat\n");
+					line.sprintf("del all.bat\n");
 					out << line;
 
 				}

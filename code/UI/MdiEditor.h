@@ -38,7 +38,7 @@ protected:
 	void paintEvent(QPaintEvent *event);
 
 public slots:
-  	void NewProject();
+	void NewProject(bool flag=false);
  	void SaveProject();
 	void ModifyPara();
 	void updateALL();

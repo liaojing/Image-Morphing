@@ -14,22 +14,43 @@ int main(int argc, char *argv[])
 		QDir::setCurrent(work_path);
 	}
 
-
 	MdiEditor mainWin(&app);
-	QString pro_path;
-	pro_path.sprintf("%s", argv[argc-1]);
-	if (pro_path.endsWith(".xml"))
-	{
-		int index=pro_path.lastIndexOf("\\");
-		pro_path.remove(index, pro_path.length()-index);
-		mainWin._auto=true;
-		mainWin.pro_path=pro_path;
-		mainWin.NewProject();
-	}
-	else
-		mainWin._auto=false;
-	
 
+	QString para1;
+	if (argc > 1) para1.sprintf("%s", argv[1]);
+	QString para2;
+	if (argc > 2) para2.sprintf("%s", argv[2]);
+
+	mainWin._auto = false;
+	if (argc > 2)
+	{
+		if (para1=="-auto" )
+		{
+			QString temp;
+			temp = para1;
+			para1 = para2;
+			para2 = temp;
+		}
+
+		if (para2=="-auto")
+			mainWin._auto = true;
+	}
+
+	
+	if (argc > 1)
+	{
+		
+		if (para1.endsWith(".xml"))
+		{
+			int index = para1.lastIndexOf("\\");
+			para1.remove(index, para1.length() - index);
+			mainWin.pro_path = para1;
+			mainWin.NewProject(true);
+		}
+		else
+			mainWin.pro_path.sprintf("%s", "");
+	}
+	
 	mainWin.show();
     return app.exec();
 }

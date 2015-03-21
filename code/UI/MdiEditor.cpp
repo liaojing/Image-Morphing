@@ -502,10 +502,10 @@ MdiEditor::~MdiEditor()
 	imageEditorA->update();
   }
 
- void MdiEditor::NewProject()
+ void MdiEditor::NewProject(bool flag)
  {
  	clear();
-	if (!_auto)
+	if (!flag)
 	  	pro_path = QFileDialog::getExistingDirectory (this);
   	if(!pro_path.isNull())
   	{
