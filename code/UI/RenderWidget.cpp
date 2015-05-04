@@ -408,9 +408,9 @@ void RenderWidget::paintGL()
  					line.sprintf("del %s\\frame???.png\n",_pro_path.toLatin1().data());
  					out<<line;	
 
-					//del
-					line.sprintf("del all.bat\n");
-					out << line;
+					////del
+					//line.sprintf("del all.bat\n");
+					//out << line;
 
 				}
 				file.flush(); 
