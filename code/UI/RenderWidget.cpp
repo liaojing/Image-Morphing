@@ -238,6 +238,7 @@ char* RenderWidget::file2string(const char *path)
 	if (!(fd = fopen(path, "r")))
 	{
 		fprintf(stderr, "Can't open file '%s' for reading\n", path);
+		QMessageBox::critical(NULL, "critical", "Please put fragshader.txt in the same directory of exe", QMessageBox::Yes);
 		return NULL;
 	}
 
