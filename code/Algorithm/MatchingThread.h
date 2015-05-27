@@ -209,6 +209,7 @@ public:
 	CData* data;
 	float run_time;
 	int iter_num[10];
+	float layer_time[10];
 	QTimer *_timer;
 	bool runflag;
 

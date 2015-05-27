@@ -116,7 +116,6 @@ void CMatchingThread::run()
 		_max_iter/=_parameters.max_iter_drop_factor;
 		upsample_level(_current_l+1, _current_l);
 		initialize_incremental(_current_l);
-		start = clock();
 		optimize_level(_current_l);
 
 		if(!runflag)
@@ -295,6 +294,8 @@ void CMatchingThread::initialize_incremental(int el)
 
 void CMatchingThread::optimize_level(int el) {
 
+    clock_t start, finish;
+	start = clock();
 	int iter=0;
 	while (data[el].improving>0&&iter<_max_iter) {
 
@@ -305,9 +306,12 @@ void CMatchingThread::optimize_level(int el) {
 		if(!runflag)
 			break;
 	}
+	finish = clock();
 
 	iter_num[el]=iter;
 	_current_iter+=(_max_iter-iter)*_pyramids.levels[el].w*_pyramids.levels[el].h;
+	layer_time[el] = (float)(finish - start) * 1000 / CLOCKS_PER_SEC;
+		
 
 }
 

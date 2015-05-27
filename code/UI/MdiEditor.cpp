@@ -6,7 +6,7 @@ MdiEditor::MdiEditor(QApplication* app,QWidget *parent)
 
 	_app=app;
 	readyLabel=NULL;
-	new_pro=save_pro=mod_para=NULL;
+	new_pro=save_pro=save_vector=mod_para=NULL;
 	imageEditorL = new ImageEditor('L');
 	imageEditorR = new ImageEditor('R');
 	imageEditorM = new HalfwayImage('M');
@@ -403,8 +403,10 @@ MdiEditor::~MdiEditor()
 	pro_menu=menuBar()->addMenu("Project");
 	new_pro=new QAction("&New Project", this);
 	save_pro=new QAction("&Save Project", this);
+	save_vector = new QAction("&Save Vector", this);
 	pro_menu->addAction(new_pro);
 	pro_menu->addAction(save_pro);
+	pro_menu->addAction(save_vector);
 
 	setting_menu=menuBar()->addMenu("Settings");
 	mod_para=new QAction("&Parameters", this);
@@ -465,6 +467,7 @@ MdiEditor::~MdiEditor()
 	//signal
 	connect(new_pro,SIGNAL(triggered()),this,SLOT(NewProject()));
 	connect(save_pro,SIGNAL(triggered()),this,SLOT(SaveProject()));
+	connect(save_vector, SIGNAL(triggered()), this, SLOT(SaveVector()));
 	connect(mod_para,SIGNAL(triggered()),this,SLOT(ModifyPara()));
 	connect(mod_mask,SIGNAL(triggered()),this,SLOT(ModifyMask()));
 	connect(show_mask,SIGNAL(triggered()),this,SLOT(ShowMask()));
@@ -574,7 +577,28 @@ MdiEditor::~MdiEditor()
 
   	WriteXmlFile(pro_path+"\\settings.xml");
 
+	
+ }
 
+ void MdiEditor::SaveVector()
+ {
+	 QString filename;
+	 filename.sprintf("%s\\data.txt", pro_path.toLatin1().data());
+	 QFile file(filename.toLatin1().data());
+	 if (file.open(QIODevice::WriteOnly))
+	 {
+		 QTextStream out(&file);
+
+		 for (int y = 0; y<image1.rows; y++)
+			 for (int x = 0; x<image1.cols; x++)
+			 {
+			 Vec3f v = pyramids[layer_index]._vector.at<Vec3f>(y, x);
+			 out << v[0] << " " << v[1] << endl;
+			 }
+
+		 file.flush();
+		 file.close();
+	 }
  }
 
 
@@ -1059,6 +1083,9 @@ MdiEditor::~MdiEditor()
  	connect(qpath_thread[index],SIGNAL(sigFinished(int)),this,SLOT(qpath_finished(int)));
  	qpath_thread[index]->start(QThread::HighestPriority);
 
+	//poisson_finished(index);
+	//qpath_finished(index);
+	//AutoQuit();
 
  }
 
@@ -1455,8 +1482,10 @@ void MdiEditor::poisson_finished(int index)
  {
 	 if(_auto)
 	 {
-		QString filename;
 
+		 SaveProject();
+		 QString filename;
+		
 		filename.sprintf("%s\\time.txt",pro_path.toLatin1().data());
 
 		QFile file(filename.toLatin1().data());
@@ -1465,27 +1494,49 @@ void MdiEditor::poisson_finished(int index)
 		{
 			QTextStream out(&file);
 			QString line;
-			if (gpu_flag)
+			if (match_thread_GPU[layer_index])
 				line.sprintf("Optimizing time: %f ms \n",match_thread_GPU[layer_index]->run_time);
-			else
+			if (match_thread[layer_index])
 				line.sprintf("Optimizing time: %f ms \n",match_thread[layer_index]->run_time);
 			out<<line;
-			line.sprintf("Poisson time: %f ms \n",poison_thread[layer_index]->_runtime);
-			out<<line;
-			line.sprintf("Quadratic path time: %f ms \n",qpath_thread[layer_index]->_runtime);
-			out<<line;
-			line.sprintf("Rendering time: %f ms \n",imageEditorA->_runtime);
-			out<<line;
-
+			if (poison_thread[layer_index])
+			{
+				line.sprintf("Poisson time: %f ms \n", poison_thread[layer_index]->_runtime);
+				out << line;
+			}
+			if (qpath_thread[layer_index])
+			{
+				line.sprintf("Quadratic path time: %f ms \n", qpath_thread[layer_index]->_runtime);
+				out << line;
+			}
+			if (imageEditorA)
+			{
+				line.sprintf("Rendering time: %f ms \n", imageEditorA->_runtime);
+				out << line;
+			}
 			
-		}
 
+			if (match_thread[layer_index]){
+
+				out << "\n";
+
+				line.sprintf("level \t resolution \t iter \t time \n");
+				out << line;
+
+				for (int i = 0; i < match_thread[layer_index]->_total_l-1; i++)
+				{
+					line.sprintf("%d \t %dx%d \t %d \t %f \n", i, match_thread[layer_index]->_pyramids.levels[i].w, match_thread[layer_index]->_pyramids.levels[i].h, match_thread[layer_index]->iter_num[i], match_thread[layer_index]->layer_time[i]);
+					out << line;
+				}
+			}
+			
+
+		}
 		
 		file.flush();
 		file.close();
-		 clear();
-		 _app->quit();
-
+		clear();
+		_app->quit();
 	 }
  }
 

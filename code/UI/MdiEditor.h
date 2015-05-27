@@ -40,6 +40,7 @@ protected:
 public slots:
 	void NewProject(bool flag=false);
  	void SaveProject();
+	void SaveVector();
 	void ModifyPara();
 	void updateALL();
 	void thread_start(int layer_index);
@@ -83,7 +84,7 @@ private:
 	QDockWidget *imageDockEditorM;
 	QDockWidget *imageDockEditorR;
 	QDockWidget *imageDockEditorA;
-	QAction *new_pro,*save_pro,*mod_para,*mod_mask,*mod_layer,*show_mask,*hide_mask,*show_halfway,*show_error,*show_image1,*show_image12,*show_image2,*show_multilayer,*show_layer[MAX_LAYER],*gpu_alg,*cpu_alg;
+	QAction *new_pro, *save_pro, *save_vector, *mod_para, *mod_mask, *mod_layer, *show_mask, *hide_mask, *show_halfway, *show_error, *show_image1, *show_image12, *show_image2, *show_multilayer, *show_layer[MAX_LAYER], *gpu_alg, *cpu_alg;
 	QAction *cancel,*confirm;
 	QMenu *pro_menu,*setting_menu,*view_menu,*alg_menu;
 	QMenu *result_view,*color_view,*layer_view,*mask_view;
