@@ -35,18 +35,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_recfilter.cu.obj" />
-    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_basic.cu.obj" />
-    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_conv.cu.obj" />
-    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_upsample.cu.obj" />
-    <Object Include="CMakeFiles\util.dir\$(Configuration)\util_generated_imgop_downsample.cu.obj" />
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="recfilter.cu" />
     <CustomBuild Include="imgop_basic.cu" />
     <CustomBuild Include="imgop_conv.cu" />
     <CustomBuild Include="imgop_upsample.cu" />
     <CustomBuild Include="imgop_downsample.cu" />
-    <CustomBuild Include="CMakeLists.txt" />
   </ItemGroup>
 </Project>

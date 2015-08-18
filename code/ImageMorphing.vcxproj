@@ -103,11 +103,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>D:\lib\Intel\Composer XE 2015\mkl\include;D:\lib\opencv3.0\build\include;D:\lib\OpenGL\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;E:\Image-Morphing\code\pyramids;E:\Image-Morphing\code\gpumorph\src;E:\Image-Morphing\code\gpumorph\lib;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\x64\vc12\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;E:\Image-Morphing\code\pyramids\x64\Debug;E:\Image-Morphing\code\gpumorph\src\Debug\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\lib\Debug;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;E:\Image-Morphing\code\pyramids\x64\Debug;E:\Image-Morphing\code\gpumorph\src\Debug\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\lib\Intel\Composer XE 2015\mkl\include;D:\lib\opencv3.0\build\include;D:\lib\OpenGL\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;E:\Image-Morphing\code\pyramids;E:\Image-Morphing\code\gpumorph\src;E:\Image-Morphing\code\gpumorph\lib;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\x64\vc12\lib;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;E:\Image-Morphing\code\pyramids\x64\Release;E:\Image-Morphing\code\gpumorph\src\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\lib\Intel\Composer XE 2015\mkl\include;D:\lib\opencv3.0\build\include;D:\lib\OpenGL\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;E:\Image-Morphing\code\gpumorph\src;E:\Image-Morphing\code\gpumorph\lib;E:\Image-Morphing\code\pyramids;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\lib\Intel\Composer XE 2015\mkl\lib;D:\lib\OpenGL\lib\Release\x64;D:\lib\opencv3.0\build\lib\Release;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\x64\;E:\Image-Morphing\code\gpumorph\src\Release;E:\Image-Morphing\code\pyramids\x64\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -157,7 +157,7 @@
       <AdditionalOptions>-Zm200 -w34100 -w34189 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
-      <DebugInformationFormat>None</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
       <ObjectFileName>release\</ObjectFileName>
       <Optimization>MaxSpeed</Optimization>
@@ -180,11 +180,11 @@
       <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\qtmain.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5OpenGL.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Widgets.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Xml.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Gui.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Core.lib;opencv_highgui300d.lib;opencv_imgproc300d.lib;opencv_core300d.lib;opencv_imgcodecs300d.lib;glew32.lib;morph.lib;resample.lib;util.lib;cudart.lib;pyramids.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glu32.lib;opengl32.lib;gdi32.lib;user32.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\qtmain.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5OpenGL.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Widgets.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Xml.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Gui.lib;D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib\Qt5Core.lib;opencv_highgui300.lib;opencv_imgproc300.lib;opencv_core300.lib;opencv_imgcodecs300.lib;glew32.lib;morph.lib;resample.lib;util.lib;cudart.lib;pyramids.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>D:\lib\Qt5.3.2\5.3\msvc2013_64_opengl\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkIncremental>false</LinkIncremental>
       <OutputFile>$(OutDir)\ImageMorphing.exe</OutputFile>
@@ -644,6 +644,8 @@
     </CustomBuild>
     <CudaCompile Include="CUDA\cg.cu">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <TargetMachinePlatform Condition="'$(Configuration)|$(Platform)'=='Release|x64'">64</TargetMachinePlatform>
+      <CodeGeneration Condition="'$(Configuration)|$(Platform)'=='Release|x64'">compute_30,sm_30</CodeGeneration>
     </CudaCompile>
     <None Include="CUDA\cg.cuh" />
     <None Include="UI\icon\pause.png" />

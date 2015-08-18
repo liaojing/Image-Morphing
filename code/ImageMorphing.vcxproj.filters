@@ -246,11 +246,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="CUDA\cg.cu">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="CUDA\cg.cuh">
       <Filter>Header Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="CUDA\cg.cu" />
   </ItemGroup>
 </Project>

@@ -27,7 +27,7 @@ MdiEditor::MdiEditor(QApplication* app,QWidget *parent)
 	createMenuBar();
 	createStatusBar();
 	gpu_flag=FALSE;
-	gpu_cap=CudaInit();
+	gpu_cap = CudaInit();
 
 	connect(imageEditorL,SIGNAL(sigUpdate()),this,SLOT(updateALL()));
 	connect(imageEditorR,SIGNAL(sigUpdate()),this,SLOT(updateALL()));
@@ -605,7 +605,7 @@ MdiEditor::~MdiEditor()
  bool MdiEditor::ReadXmlFile(QString filename)
  {
   	QDomDocument doc("settings");
-  	QFile file(filename);
+   	QFile file(filename);
 
   	if(file.open(QIODevice::ReadOnly))
   	{
@@ -1018,6 +1018,7 @@ MdiEditor::~MdiEditor()
  }
  void MdiEditor::PtModified()
  {
+	 if (pyramids[layer_index]._gpu)
 	 pyramids[layer_index]._gpu->params()=parameters[layer_index];
 	 thread_start(layer_index);
  }

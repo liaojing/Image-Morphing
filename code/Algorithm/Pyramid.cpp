@@ -16,6 +16,7 @@ CPyramids::~CPyramids(void)
 	levels.clear();
 	if (_gpu)
 		delete _gpu;
+	_gpu = NULL;
 	
 }
 
@@ -70,6 +71,7 @@ void  CPyramids::build_pyramid(cv::Mat &image1, cv::Mat &image2,Parameters& para
 	int ex=image1.rows*0.2;
 	_extends1=cv::Mat(image1.rows+ex*2,image1.cols+ex*2,CV_8UC4,Scalar(255,255,255,255));
 	_extends2=cv::Mat(image2.rows+ex*2,image2.cols+ex*2,CV_8UC4,Scalar(255,255,255,255));
+		
 	extends1.copyTo(_extends1(Rect(ex, ex, image1.cols, image1.rows)));
 	extends2.copyTo(_extends2(Rect(ex, ex, image2.cols, image2.rows)));
 
